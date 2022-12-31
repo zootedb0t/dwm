@@ -246,6 +246,7 @@ static void pop(Client *c);
 static void propertynotify(XEvent *e);
 static void quit(const Arg *arg);
 static Monitor *recttomon(int x, int y, int w, int h);
+static void reorganizetags(const Arg *arg);
 static void resize(Client *c, int x, int y, int w, int h, int interact);
 static void resizeclient(Client *c, int x, int y, int w, int h);
 static void resizemouse(const Arg *arg);
@@ -1416,7 +1417,7 @@ loadxrdb()
 
       if (xrdb != NULL) {
         XRDB_LOAD_COLOR("color0", normbordercolor);
-        XRDB_LOAD_COLOR("color8", normbgcolor);
+        XRDB_LOAD_COLOR("color3", normbgcolor);
         XRDB_LOAD_COLOR("color0", normfgcolor);
         XRDB_LOAD_COLOR("color6", selbordercolor);
         XRDB_LOAD_COLOR("color0", selbgcolor);
@@ -1719,6 +1720,33 @@ removesystrayicon(Client *i)
 	if (ii)
 		*ii = i->next;
 	free(i);
+}
+
+void
+reorganizetags(const Arg *arg) {
+	Client *c;
+	unsigned int occ, unocc, i;
+	unsigned int tagdest[LENGTH(tags)];
+
+	occ = 0;
+	for (c = selmon->clients; c; c = c->next)
+		occ |= (1 << (ffs(c->tags)-1));
+	unocc = 0;
+	for (i = 0; i < LENGTH(tags); ++i) {
+		while (unocc < i && (occ & (1 << unocc)))
+			unocc++;
+		if (occ & (1 << i)) {
+			tagdest[i] = unocc;
+			occ &= ~(1 << i);
+			occ |= 1 << unocc;
+		}
+	}
+
+	for (c = selmon->clients; c; c = c->next)
+		c->tags = 1 << tagdest[ffs(c->tags)-1];
+	if (selmon->sel)
+		selmon->tagset[selmon->seltags] = selmon->sel->tags;
+	arrange(selmon);
 }
 
 void

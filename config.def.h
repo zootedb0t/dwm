@@ -18,11 +18,11 @@ static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows sel
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray             = 1;   /* 0 means no systray */
-static const char *fonts[]          = {"Monofur Nerd Font:style:Book:size=8:antialias=true:autohint=true",
-                                      "Material Design Icons Desktop:size=8:antialias=true:autohint=true", "JoyPixels:size:8:antialias=true:autohint=true"};
+static const char *fonts[]          = {"Monofur Nerd Font:style:Book:size=10:antialias=true:autohint=true",
+                                      "Material Design Icons Desktop:size=10:antialias=true:autohint=true", "JoyPixels:size:10:antialias=true:autohint=true"};
 static const char dmenufont[]       = "monospace:size=10";
 
-static const unsigned int baralpha = 200;
+static const unsigned int baralpha = 210;
 static const unsigned int borderalpha = OPAQUE;
 
 static char normbgcolor[]           = "#222222";
@@ -54,6 +54,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     iscentered   isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            0,           1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           0,           -1 },
+	{ "firefox-nightly", "Browser", NULL, 0,            1,           1,           -1 },
 };
 
 /* layout(s) */
@@ -113,6 +114,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_backslash,setcfact,       {.f = +0.25} },
 	{ MODKEY|ShiftMask,             XK_backslash,setcfact,       {.f = -0.25} },
 	{ MODKEY|ShiftMask,             XK_o,      setcfact,       {.f =  0.00} },
+	{ MODKEY|ShiftMask,             XK_r,      reorganizetags, {0} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY|Mod4Mask,              XK_u,      incrgaps,       {.i = +1 } },
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } },

@@ -14,8 +14,8 @@ darkblue=#bd93f9
 cpu() {
   cpu_val=$(grep -o "^[^ ]*" /proc/loadavg)
 
-  printf "^c$blue^%s" " "
-  printf "^c$blue^%s" "$cpu_val"
+  printf "^c$black^%s" " "
+  printf "^c$black^%s" "$cpu_val"
 }
 
 cputemp() {
@@ -100,8 +100,8 @@ volume() {
 }
 
 mem() {
-  printf "^c$blue^%s" " "
-  printf "^c$blue^%s" "$(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"
+  printf "^c$black^%s" " "
+  printf "^c$black^%s" "$(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"
 }
 
 clock() {
