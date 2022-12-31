@@ -20,7 +20,7 @@ static const char *fonts[]          = {"Monofur Nerd Font:style:Book:size=9",
                                       "Material Design Icons Desktop:size=9", "JoyPixels:size:9"};
 static const char dmenufont[]       = "monospace:size=10";
 
-static const unsigned int baralpha = 0xd0;
+static const unsigned int baralpha = 9;
 static const unsigned int borderalpha = OPAQUE;
 
 static char normbgcolor[]           = "#222222";
