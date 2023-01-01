@@ -17,8 +17,8 @@ darkblue=#bd93f9
 cpu() {
   cpu_val=$(grep -o "^[^ ]*" /proc/loadavg)
 
-  printf "^c$black^%s" " "
-  printf "^c$black^%s" "$cpu_val"
+  printf "^c$white^%s" " "
+  printf "^c$white^%s" "$cpu_val"
 }
 
 cputemp() {
@@ -31,7 +31,7 @@ cputemp() {
   if [ "$CPU_TEMP" -ge $WARNING_LEVEL ]; then
     printf "^c$red^$PREFIX%s" "$CPU_TEMP°C"
   else
-    printf "$PREFIX%s" "$CPU_TEMP°C"
+    printf "^c$white^$PREFIX%s" "$CPU_TEMP°C"
   fi
 }
 
@@ -47,7 +47,7 @@ TKBPS=$((TBPS / 1024))
 RKBPS=$((RBPS / 1024))
 icon=""
 icon1=""
-printf " %s %s %s %s\\n" "$icon" "$RKBPS kb" "$icon1" "$TKBPS kb"
+printf "^c$white^ %s %s %s %s\\n" "$icon" "$RKBPS kb" "$icon1" "$TKBPS kb"
 }
 
 pkg_updates() {
@@ -56,7 +56,7 @@ pkg_updates() {
   if [ "$updates" = '0' ]; then
     printf ""
   else
-    printf " %s" "$updates updates"
+    printf "^c$white^$ %s" "$updates updates"
   fi
 }
 
@@ -90,26 +90,26 @@ volume() {
   else
     if [ "$vol" -ge 65 ]; then
       # echo " $vol%"
-      printf "^c$black^%s" " "
-      printf "^c$black^%s" " $vol"
+      printf "^c$white^%s" " "
+      printf "^c$white^%s" " $vol"
     elif [ "$vol" -ge 40 ]; then
-      printf "^c$black^%s" "墳"
-      printf "^c$black^%s" " $vol"
+      printf "^c$white^%s" "墳 "
+      printf "^c$white^%s" " $vol"
     elif [ "$vol" -ge 0 ]; then
-      printf "^c$black^%s" " "
-      printf "^c$black^%s"	" $vol"
+      printf "^c$white^%s" " "
+      printf "^c$white^%s"	" $vol"
     fi
   fi
 }
 
 mem() {
-  printf "^c$black^%s" " "
-  printf "^c$black^%s" "$(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"
+  printf "^c$white^%s" " "
+  printf "^c$white^%s" "$(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"
 }
 
 clock() {
-  printf "^c$black^%s" "󱑆 "
-  printf "^c$black^%s " "$(date '+%H:%M %a %d %b')"
+  printf "^c$white^%s" "󱑆 "
+  printf "^c$white^%s " "$(date '+%H:%M %a %d %b')"
 }
 
 music(){
@@ -117,11 +117,12 @@ music(){
   if [ "$status" == "Playing" ]; then
     title="$(playerctl metadata xesam:title)"
     length=${#title}
-    if [ "$length" -gt 10 ]; then
-      title+=...
-      printf "  %s" "$title"
+    if [ "$length" -gt 12 ]; then
+      # title+=...
+      new_title="$(echo "$title" | cut -c 1-10)"
+      printf "^c$white^  %s..." "$new_title"
       else
-      printf "  %s" "$title"
+      printf "^c$white^  %s" "$title"
     fi
     else 
       printf ""

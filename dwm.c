@@ -1417,12 +1417,12 @@ loadxrdb()
       xrdb = XrmGetStringDatabase(resm);
 
       if (xrdb != NULL) {
-        XRDB_LOAD_COLOR("color0", normbordercolor);
-        XRDB_LOAD_COLOR("color3", normbgcolor);
-        XRDB_LOAD_COLOR("color0", normfgcolor);
-        XRDB_LOAD_COLOR("color6", selbordercolor);
-        XRDB_LOAD_COLOR("color0", selbgcolor);
-        XRDB_LOAD_COLOR("color7", selfgcolor);
+        XRDB_LOAD_COLOR("background", normbordercolor);
+        XRDB_LOAD_COLOR("color0", normbgcolor);
+        XRDB_LOAD_COLOR("foreground", normfgcolor);
+        XRDB_LOAD_COLOR("color9", selbordercolor);
+        XRDB_LOAD_COLOR("color8", selbgcolor);
+        XRDB_LOAD_COLOR("color0", selfgcolor);
       }
     }
   }
