@@ -18,11 +18,12 @@ static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows sel
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray             = 1;   /* 0 means no systray */
-static const char *fonts[]          = {"Monofur Nerd Font:style:Book:size=10:antialias=true:autohint=true",
-                                      "Material Design Icons Desktop:size=10:antialias=true:autohint=true", "JoyPixels:size:10:antialias=true:autohint=true"};
+static const char *fonts[]          = {"Monofur Nerd Font:style:Book:size=8:antialias=true:autohint=true",
+                                      "Material Design Icons Desktop:size=10:antialias=true:autohint=true","JoyPixels:size:10:antialias=true:autohint=true"};
 static const char dmenufont[]       = "monospace:size=10";
 
-static const unsigned int baralpha = 210;
+/* bar opacity from 0 to 255 (Solid) */
+static const unsigned int baralpha = 160;
 static const unsigned int borderalpha = OPAQUE;
 
 static char normbgcolor[]           = "#222222";
@@ -132,7 +133,7 @@ static const Key keys[] = {
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_9,      incrovgaps,     {.i = -1 } },
 	{ MODKEY|Mod4Mask,              XK_0,      togglegaps,     {0} },
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
-	{ MODKEY,                       XK_Tab,    view,           {0} },
+	{ MODKEY,                       XK_grave,  view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_e,      setlayout,      {.v = &layouts[1]} },

@@ -88,13 +88,13 @@ volume() {
     if [ "$vol" -ge 65 ]; then
       # echo " $vol%"
       printf "^c$black^%s " "  "
-      printf "^c$white^%s" " $vol"
+      printf "^c$black^%s" " $vol"
     elif [ "$vol" -ge 40 ]; then
       printf "^c$black^%s " " 墳"
-      printf "^c$white^%s" " $vol"
+      printf "^c$black^%s" " $vol"
     elif [ "$vol" -ge 0 ]; then
       printf "^c$black^%s " "  "
-      printf "^c$white^%s"	" $vol"
+      printf "^c$black^%s"	" $vol"
     fi
   fi
 }
@@ -113,10 +113,16 @@ music(){
   status=$(playerctl status)
   if [ "$status" == "Playing" ]; then
     title="$(playerctl metadata xesam:title)"
-    printf "  %.25s" "$title"
+    length=${#title}
+    if [ "$length" -gt 10 ]; then
+      title+=...
+      printf "  %s" "$title"
+      else
+      printf "  %s" "$title"
+    fi
     else 
       printf ""
-  fi
+    fi
 }
 
 while true; do
