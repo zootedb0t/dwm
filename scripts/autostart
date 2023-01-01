@@ -1,0 +1,21 @@
+#!/bin/sh
+
+exec ~/.fehbg &
+
+xrdb -merge ~/.Xresources
+
+xbacklight -set 70 &
+
+picom --config /home/stoney/.config/picom/picom.conf --vsync &
+
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+nm-applet &
+
+sxhkd &
+
+~/.local/src/suckless/dwm/scripts/bar.sh &
+
+# exec slstatus &
+
+exec dwm 2> "$HOME/.cache/dwm.log"

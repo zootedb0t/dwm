@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# ^c$var^ = fg color
+# ^b$var^ = bg color
+
 interval=0
 
 # load colors
@@ -87,13 +90,13 @@ volume() {
   else
     if [ "$vol" -ge 65 ]; then
       # echo " $vol%"
-      printf "^c$black^%s " "  "
+      printf "^c$black^%s" " "
       printf "^c$black^%s" " $vol"
     elif [ "$vol" -ge 40 ]; then
-      printf "^c$black^%s " " 墳"
+      printf "^c$black^%s" "墳"
       printf "^c$black^%s" " $vol"
     elif [ "$vol" -ge 0 ]; then
-      printf "^c$black^%s " "  "
+      printf "^c$black^%s" " "
       printf "^c$black^%s"	" $vol"
     fi
   fi
