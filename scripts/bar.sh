@@ -108,7 +108,7 @@ mem() {
 }
 
 clock() {
-  printf "^c$white^%s" "󱑆 "
+  printf "^c$blue^%s" "󱑆 "
   printf "^c$white^%s " "$(date '+%H:%M %a %d %b')"
 }
 
