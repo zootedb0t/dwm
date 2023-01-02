@@ -303,6 +303,7 @@ static int xerrorstart(Display *dpy, XErrorEvent *ee);
 static void xrdb(const Arg *arg);
 static void xinitvisual();
 static void zoom(const Arg *arg);
+static void killunsel(const Arg *arg);
 
 /* variables */
 static const char broken[] = "broken";
@@ -1370,7 +1371,7 @@ loadxrdb()
         XRDB_LOAD_COLOR("color7", normfgcolor);
         XRDB_LOAD_COLOR("color7", selbordercolor);
         XRDB_LOAD_COLOR("color1", selbgcolor);
-        XRDB_LOAD_COLOR("color7", selfgcolor);
+        XRDB_LOAD_COLOR("foreground", selfgcolor);
       }
     }
   }
@@ -3018,6 +3019,36 @@ zoom(const Arg *arg)
 	if (c == nexttiled(selmon->clients) && !(c = nexttiled(c->next)))
 		return;
 	pop(c);
+}
+
+void
+killunsel(const Arg *arg)
+{
+	Client *i = NULL;
+
+	if (!selmon->sel)
+		return;
+
+	for (i = selmon->clients; i; i = i->next) {
+		if (ISVISIBLE(i) && i != selmon->sel) {
+			if (!sendevent(
+			      i->win, 
+			      wmatom[WMDelete],
+            NoEventMask,
+            wmatom[WMDelete],
+            CurrentTime,
+            0, 0, 0
+			      )) {
+				XGrabServer(dpy);
+				XSetErrorHandler(xerrordummy);
+				XSetCloseDownMode(dpy, DestroyAll);
+				XKillClient(dpy, i->win);
+				XSync(dpy, False);
+				XSetErrorHandler(xerror);
+				XUngrabServer(dpy);
+			}
+		}
+	}
 }
 
 int

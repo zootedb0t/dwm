@@ -93,7 +93,7 @@ volume() {
       printf "^c$white^%s" " "
       printf "^c$white^%s" "$vol"
     elif [ "$vol" -ge 40 ]; then
-      printf "^c$white^%s" "墳"
+      printf "^c$white^%s " "墳"
       printf "^c$white^%s" "$vol"
     elif [ "$vol" -ge 0 ]; then
       printf "^c$white^%s" " "
