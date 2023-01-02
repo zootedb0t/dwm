@@ -56,7 +56,7 @@ pkg_updates() {
   if [ "$updates" = '0' ]; then
     printf ""
   else
-    printf "^c$white^$ %s" "$updates updates"
+    printf "^c$white^ %s" "$updates updates"
   fi
 }
 
@@ -91,13 +91,13 @@ volume() {
     if [ "$vol" -ge 65 ]; then
       # echo " $vol%"
       printf "^c$white^%s" " "
-      printf "^c$white^%s" " $vol"
+      printf "^c$white^%s" "$vol"
     elif [ "$vol" -ge 40 ]; then
-      printf "^c$white^%s" "墳 "
-      printf "^c$white^%s" " $vol"
+      printf "^c$white^%s" "墳"
+      printf "^c$white^%s" "$vol"
     elif [ "$vol" -ge 0 ]; then
       printf "^c$white^%s" " "
-      printf "^c$white^%s"	" $vol"
+      printf "^c$white^%s"	"$vol"
     fi
   fi
 }
