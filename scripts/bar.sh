@@ -3,8 +3,6 @@
 # ^c$var^ = fg color
 # ^b$var^ = bg color
 
-interval=0
-
 # load colors
 black=#21222c
 green=#50fa7b
@@ -14,54 +12,42 @@ blue=#d6acff
 red=#ff5555
 darkblue=#bd93f9
 
-cpu() {
-	cpu_val=$(grep -o "^[^ ]*" /proc/loadavg)
+# pkg_updates() {
+# 	updates=$(checkupdates | wc -l) # arch
 
-	printf "^c$white^%s" " "
-	printf "^c$white^%s" "$cpu_val"
-}
+# 	if [ "$updates" = '0' ]; then
+# 		printf ""
+# 	else
+# 		printf "^c$white^ %s" "$updates updates"
+# 	fi
+# }
 
-cputemp() {
-	PREFIX=' '
-	WARNING_LEVEL=80
+# # brightness() {
+# #   level="$(cat /sys/class/backlight/nvidia_0/actual_brightness)"
+# #   printf "^c$red^%s" " "
+# #   printf "^c$red^%s" "$level"
+# # }
 
-	CPU_T=$(cat /sys/class/thermal/thermal_zone0/subsystem/thermal_zone9/temp)
-	CPU_TEMP=$((CPU_T / 1000))
+# music() {
+# 	status=$(playerctl status)
+# 	if [ "$status" == "Playing" ]; then
+# 		title="$(playerctl metadata xesam:title)"
+# 		length=${#title}
+# 		if [ "$length" -gt 12 ]; then
+# 			# title+=...
+# 			new_title="$(echo "$title" | cut -c 1-10)"
+# 			printf "^c$white^  %s..." "$new_title"
+# 		else
+# 			printf "^c$white^  %s" "$title"
+# 		fi
+# 	else
+# 		printf ""
+# 	fi
+# }
 
-	if [ "$CPU_TEMP" -ge $WARNING_LEVEL ]; then
-		printf "^c$red^$PREFIX%s" "$CPU_TEMP°C"
-	else
-		printf "^c$white^$PREFIX%s" "$CPU_TEMP°C"
-	fi
-}
-
-net() {
-	R1=$(cat /sys/class/net/wlan0/statistics/rx_bytes)
-	T1=$(cat /sys/class/net/wlan0/statistics/tx_bytes)
-	sleep 1
-	R2=$(cat /sys/class/net/wlan0/statistics/rx_bytes)
-	T2=$(cat /sys/class/net/wlan0/statistics/tx_bytes)
-	TBPS=$((T2 - T1))
-	RBPS=$((R2 - R1))
-	TKBPS=$((TBPS / 1024))
-	RKBPS=$((RBPS / 1024))
-	icon=""
-	icon1=""
-	printf "^c$white^ %s %s %s %s\\n" "$icon" "$RKBPS kb" "$icon1" "$TKBPS kb"
-}
-
-pkg_updates() {
-	updates=$(checkupdates | wc -l) # arch
-
-	if [ "$updates" = '0' ]; then
-		printf ""
-	else
-		printf "^c$white^ %s" "$updates updates"
-	fi
-}
-
-battery() {
-	CHARGING_ICON=''
+case $1 in
+battery)
+	CHARGING_ICON=' '
 	DISCHARGE_ICON=''
 	capacity="$(cat /sys/class/power_supply/BAT0/capacity)"
 	char_status="$(cat /sys/class/power_supply/BAT0/status)"
@@ -73,15 +59,8 @@ battery() {
 	elif [ "$char_status" == "Discharging" ] && [ "$capacity" -lt 20 ]; then
 		printf "^c$red^$DISCHARGE_ICON $capacity"
 	fi
-}
-
-# brightness() {
-#   level="$(cat /sys/class/backlight/nvidia_0/actual_brightness)"
-#   printf "^c$red^%s" " "
-#   printf "^c$red^%s" "$level"
-# }
-
-volume() {
+	;;
+volume)
 	muted=$(amixer -D pulse get Master | grep '%' | grep -oE '[^ ]+$' | grep off | head -n 1)
 	vol=$(amixer -D pulse get Master | grep '%' | head -n 1 | awk -F'[' '{print $2}' | awk -F'%' '{print $1}')
 
@@ -100,40 +79,44 @@ volume() {
 			printf "^c$white^%s" "$vol"
 		fi
 	fi
-}
+	;;
+cputemp)
+	PREFIX=' '
+	WARNING_LEVEL=80
 
-mem() {
-	printf "^c$white^%s" " "
-	printf "^c$white^%s" "$(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"
-}
+	CPU_T=$(cat /sys/class/thermal/thermal_zone0/subsystem/thermal_zone9/temp)
+	CPU_TEMP=$((CPU_T / 1000))
 
-clock() {
-	printf "^c$blue^%s" "󱑆 "
-	printf "^c$white^%s " "$(date '+%H:%M %a %d %b')"
-}
-
-music() {
-	status=$(playerctl status)
-	if [ "$status" == "Playing" ]; then
-		title="$(playerctl metadata xesam:title)"
-		length=${#title}
-		if [ "$length" -gt 12 ]; then
-			# title+=...
-			new_title="$(echo "$title" | cut -c 1-10)"
-			printf "^c$white^  %s..." "$new_title"
-		else
-			printf "^c$white^  %s" "$title"
-		fi
+	if [ "$CPU_TEMP" -ge $WARNING_LEVEL ]; then
+		printf "^c$red^$PREFIX%s" "$CPU_TEMP°C"
 	else
-		printf ""
+		printf "^c$white^$PREFIX%s" "$CPU_TEMP°C"
 	fi
-}
+	;;
+music)
+	status=$(playerctl status)
+	if [ "$status" == "No players found" ]; then
+		print "Not playing"
+		if [ "$status" == "Playing" ]; then
+			title="$(playerctl metadata xesam:title)"
+			length=${#title}
+			if [ "$length" -gt 12 ]; then
+				# title+=...
+				new_title="$(echo "$title" | cut -c 1-10)"
+				printf "^c$white^  %s..." "$new_title"
+			else
+				printf "^c$white^  %s" "$title"
+			fi
+		fi
+	fi
+	;;
+updates)
+	updates=$(checkupdates | wc -l) # arch
 
-while true; do
-
-	[ $interval = 0 ] || [ $((interval % 3600)) = 0 ] && updates=$(pkg_updates)
-	interval=$((interval + 1))
-
-	sleep 1 && xsetroot -name "$(music) $(net) $updates $(cputemp) $(battery) $(volume) $(cpu) $(mem) $(clock)"
-
-done
+	if [ "$updates" = '0' ]; then
+		printf ""
+	else
+		printf "^c$white^ %s" "$updates updates"
+	fi
+	;;
+esac

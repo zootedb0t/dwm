@@ -14,8 +14,8 @@ nm-applet &
 
 sxhkd &
 
-~/.local/src/suckless/dwm/scripts/bar.sh &
+# ~/.local/src/suckless/dwm/scripts/bar.sh &
 
-# exec slstatus &
+exec slstatus &
 
 exec dwm 2>"$HOME/.cache/dwm.log"
