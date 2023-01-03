@@ -5,15 +5,18 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
-int main(void) {
+int
+main(void)
+{
 	Display *d;
 	Window r, f, t = None;
 	XSizeHints h;
 	XEvent e;
 
 	d = XOpenDisplay(NULL);
-	if (!d)
+	if (!d) {
 		exit(1);
+	}
 	r = DefaultRootWindow(d);
 
 	f = XCreateSimpleWindow(d, r, 100, 100, 400, 400, 0, 0, 0);

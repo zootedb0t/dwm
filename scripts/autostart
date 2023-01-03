@@ -18,4 +18,4 @@ sxhkd &
 
 # exec slstatus &
 
-exec dwm 2> "$HOME/.cache/dwm.log"
+exec dwm 2>"$HOME/.cache/dwm.log"
