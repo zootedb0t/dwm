@@ -116,7 +116,7 @@ updates)
 	# if [ "$updates" = '0' ]; then
 	# 	printf ""
 	# else
-		printf "^c$white^ %s" "$updates updates"
+		echo " $updates updates"
 	# fi
 	;;
 esac

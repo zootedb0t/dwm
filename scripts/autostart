@@ -1,6 +1,6 @@
 #!/bin/sh
 
-exec ~/.fehbg &
+xwallpaper --zoom ~/.local/share/bg.jpg
 
 xrdb -merge ~/.Xresources
 
