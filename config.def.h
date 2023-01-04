@@ -23,7 +23,7 @@ static const char *fonts[]          = { "Monofur Nerd Font:style:Book:size=10:an
 static const char dmenufont[]       = "monospace:size=10";
 
 /* bar opacity from 0 to 255 (Solid) */
-static const unsigned int baralpha = 150;
+static const unsigned int baralpha = 180;
 static const unsigned int borderalpha = OPAQUE;
 
 static char normbgcolor[]           = "#222222";
