@@ -6,6 +6,8 @@ xrdb -merge ~/.Xresources
 
 xbacklight -set 70 &
 
+# xset r rate 200 50
+
 picom --config /home/stoney/.config/picom/picom.conf --vsync &
 
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &

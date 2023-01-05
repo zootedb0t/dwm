@@ -11,14 +11,14 @@ static       int smartgaps          = 0;        /* 1 means no outer gap when the
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const int horizpadbar        = 8;        /* horizontal padding for statusbar */
-static const int vertpadbar         = 8;        /* vertical padding for statusbar */
+static const int horizpadbar        = 5;        /* horizontal padding for statusbar */
+static const int vertpadbar         = 5;        /* vertical padding for statusbar */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray             = 1;   /* 0 means no systray */
-static const char *fonts[]          = { "JetBrainsMono Nerd Font:style:Regular:size=10:antialias=true:autohint=true",
-                                        "Material Design Icons Desktop:size=10:antialias=true:autohint=true", "JoyPixels:size:10:antialias=true:autohint=true"
+static const char *fonts[]          = { "Monofur Nerd Font:style=Book:size=10:antialias=true:autohint=true",
+                                        "Material Design Icons Desktop:size=8:antialias=true:autohint=true", "JoyPixels:size:8:antialias=true:autohint=true"
                                       };
 static const char dmenufont[]       = "monospace:size=10";
 
@@ -143,7 +143,9 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_e,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
+	{ MODKEY,                       XK_space,  cyclelayout,    {.i = +1 } },
+	// { MODKEY | ControlMask,		      XK_comma,  cyclelayout,    {.i = -1 } },
+	// { MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY | ShiftMask,           XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_Down,   moveresize,     {.v = "0x 25y 0w 0h" } },
 	{ MODKEY,                       XK_Up,     moveresize,     {.v = "0x -25y 0w 0h" } },
@@ -162,7 +164,7 @@ static const Key keys[] = {
 	{ MODKEY | ShiftMask,           XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY | ShiftMask,           XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
-	{ MODKEY | ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY | ShiftMask,           XK_q,      quit,           {0} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
