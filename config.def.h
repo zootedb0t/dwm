@@ -11,14 +11,14 @@ static       int smartgaps          = 0;        /* 1 means no outer gap when the
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const int horizpadbar        = 5;        /* horizontal padding for statusbar */
-static const int vertpadbar         = 5;        /* vertical padding for statusbar */
+static const int horizpadbar        = 8;        /* horizontal padding for statusbar */
+static const int vertpadbar         = 8;        /* vertical padding for statusbar */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray             = 1;   /* 0 means no systray */
-static const char *fonts[]          = { "Monofur Nerd Font:style=Book:size=10:antialias=true:autohint=true",
-                                        "Material Design Icons Desktop:size=8:antialias=true:autohint=true", "JoyPixels:size:8:antialias=true:autohint=true"
+static const char *fonts[]          = { "Monofur Nerd Font:style=Book:size=9:antialias=true:autohint=true",
+                                        "Material Design Icons Desktop:size=9:antialias=true:autohint=true", "JoyPixels:size:9:antialias=true:autohint=true"
                                       };
 static const char dmenufont[]       = "monospace:size=10";
 
@@ -56,6 +56,7 @@ static const Rule rules[] = {
 	{ "Gimp",     NULL,       NULL,       0,            0,           1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           0,           -1 },
 	{ "firefox-nightly", "Browser", NULL, 0,            1,           1,           -1 },
+	{ "firefox-nightly", "Toolkit", "Picture-in-Picture", 0,  1,     1,           -1 },
 };
 
 /* layout(s) */
@@ -122,21 +123,21 @@ static const Key keys[] = {
 	{ MODKEY | ShiftMask,           XK_r,      reorganizetags, {0} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY | Mod4Mask,            XK_u,      incrgaps,       {.i = +1 } },
-	{ MODKEY | Mod4Mask | ShiftMask, XK_u,      incrgaps,       {.i = -1 } },
+	{ MODKEY | Mod4Mask | ShiftMask, XK_u,     incrgaps,       {.i = -1 } },
 	{ MODKEY | Mod4Mask,            XK_i,      incrigaps,      {.i = +1 } },
-	{ MODKEY | Mod4Mask | ShiftMask, XK_i,      incrigaps,      {.i = -1 } },
+	{ MODKEY | Mod4Mask | ShiftMask, XK_i,     incrigaps,      {.i = -1 } },
 	{ MODKEY | Mod4Mask,            XK_o,      incrogaps,      {.i = +1 } },
-	{ MODKEY | Mod4Mask | ShiftMask, XK_o,      incrogaps,      {.i = -1 } },
+	{ MODKEY | Mod4Mask | ShiftMask, XK_o,     incrogaps,      {.i = -1 } },
 	{ MODKEY | Mod4Mask,            XK_6,      incrihgaps,     {.i = +1 } },
-	{ MODKEY | Mod4Mask | ShiftMask, XK_6,      incrihgaps,     {.i = -1 } },
+	{ MODKEY | Mod4Mask | ShiftMask, XK_6,     incrihgaps,     {.i = -1 } },
 	{ MODKEY | Mod4Mask,            XK_7,      incrivgaps,     {.i = +1 } },
-	{ MODKEY | Mod4Mask | ShiftMask, XK_7,      incrivgaps,     {.i = -1 } },
+	{ MODKEY | Mod4Mask | ShiftMask, XK_7,     incrivgaps,     {.i = -1 } },
 	{ MODKEY | Mod4Mask,            XK_8,      incrohgaps,     {.i = +1 } },
-	{ MODKEY | Mod4Mask | ShiftMask, XK_8,      incrohgaps,     {.i = -1 } },
+	{ MODKEY | Mod4Mask | ShiftMask, XK_8,     incrohgaps,     {.i = -1 } },
 	{ MODKEY | Mod4Mask,            XK_9,      incrovgaps,     {.i = +1 } },
-	{ MODKEY | Mod4Mask | ShiftMask, XK_9,      incrovgaps,     {.i = -1 } },
+	{ MODKEY | Mod4Mask | ShiftMask, XK_9,     incrovgaps,     {.i = -1 } },
 	{ MODKEY | Mod4Mask,            XK_0,      togglegaps,     {0} },
-	{ MODKEY | Mod4Mask | ShiftMask, XK_0,      defaultgaps,    {0} },
+	{ MODKEY | Mod4Mask | ShiftMask, XK_0,     defaultgaps,    {0} },
 	{ MODKEY,                       XK_grave,  view,           {0} },
 	{ MODKEY | ShiftMask,           XK_c,      killclient,     {0} },
 	{ MODKEY | ControlMask,         XK_c,      killunsel,      {0} },
