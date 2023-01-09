@@ -17,7 +17,7 @@ static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows sel
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray             = 1;   /* 0 means no systray */
-static const char *fonts[]          = { "Monofur Nerd Font:style=Book:size=9:antialias=true:autohint=true",
+static const char *fonts[]          = { "Iosevka Nerd Font:style=Regular:size=9:antialias=true:autohint=true",
                                         "Material Design Icons Desktop:size=9:antialias=true:autohint=true", "JoyPixels:size:9:antialias=true:autohint=true"
                                       };
 static const char dmenufont[]       = "monospace:size=10";
