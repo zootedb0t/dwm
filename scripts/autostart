@@ -6,7 +6,7 @@ xrdb -merge ~/.Xresources
 
 xbacklight -set 70 &
 
-xset r rate 300 50
+xset r rate 210 40
 
 picom --config /home/stoney/.config/picom/picom.conf &
 
@@ -17,6 +17,8 @@ nm-applet &
 sxhkd &
 
 # ~/.local/src/suckless/dwm/scripts/bar.sh &
+
+~/.local/bin/battery.sh &
 
 exec slstatus &
 

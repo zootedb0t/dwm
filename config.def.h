@@ -11,14 +11,14 @@ static       int smartgaps          = 0;        /* 1 means no outer gap when the
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const int horizpadbar        = 8;        /* horizontal padding for statusbar */
-static const int vertpadbar         = 8;        /* vertical padding for statusbar */
+static const int horizpadbar        = 5;        /* horizontal padding for statusbar */
+static const int vertpadbar         = 5;        /* vertical padding for statusbar */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray             = 1;   /* 0 means no systray */
-static const char *fonts[]          = { "Iosevka Nerd Font:style=Regular:size=9:antialias=true:autohint=true",
-                                        "Material Design Icons Desktop:size=9:antialias=true:autohint=true", "JoyPixels:size:9:antialias=true:autohint=true"
+static const char *fonts[]          = { "Iosevka Nerd Font:style=Regular:size=8:antialias=true:autohint=true",
+                                        "Material Design Icons Desktop:size=8:antialias=true:autohint=true", "JoyPixels:size:6:antialias=true:autohint=true"
                                       };
 static const char dmenufont[]       = "monospace:size=10";
 
