@@ -24,7 +24,7 @@ static const char *fonts[]          = { "Iosevka Nerd Font:style=Regular:size=8:
 static const char dmenufont[]       = "monospace:size=10";
 
 /* bar opacity from 0 to 255 (Solid) */
-static const unsigned int baralpha = 180;
+static const unsigned int baralpha = 150;
 static const unsigned int borderalpha = OPAQUE;
 
 static char normbgcolor[]           = "#222222";
@@ -56,7 +56,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     iscentered   isfloating    isterminal     noswallow      monitor */
 	{ "Gimp",     NULL,       NULL,       0,            0,           1,            0,              0,            -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           0,            0,             -1,            -1 },
-	{ "firefox-nightly", "Browser", NULL, 0,            1,           1,            0,              0,            -1 },
+	{ "firefox-nightly", "Browser", "About Firefox Nightly", 0, 1,   1,            0,              0,            -1 },
 	{ "firefox-nightly", "Toolkit", "Picture-in-Picture", 0,  1,     1,            0,              0,            -1 },
 	{ "St",       NULL,       NULL,           0,           0,        0,            1,              0,            -1 },
 	{ NULL,       NULL,       "Event Tester", 0,           0,        0,            0,              1,            -1 }, /* xev */
