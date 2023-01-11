@@ -69,6 +69,7 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 #define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
 #include "vanitygaps.c"
+#include "shiftview.c"
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
@@ -139,6 +140,10 @@ static const Key keys[] = {
 	{ MODKEY | Mod4Mask,            XK_0,      togglegaps,     {0} },
 	{ MODKEY | Mod4Mask | ShiftMask, XK_0,     defaultgaps,    {0} },
 	{ MODKEY,                       XK_grave,  view,           {0} },
+	{ MODKEY,                       XK_g,      shiftview,      { .i = -1 } },
+	{ MODKEY | ShiftMask,           XK_g,      shifttag,       { .i = -1 } },
+	{ MODKEY,			                  XK_semicolon,	shiftview,	 { .i = 1 } },
+	{ MODKEY | ShiftMask,		        XK_semicolon,	shifttag,	   { .i = 1 } },
 	{ MODKEY | ShiftMask,           XK_c,      killclient,     {0} },
 	{ MODKEY | ControlMask,         XK_c,      killunsel,      {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
