@@ -22,4 +22,5 @@ sxhkd &
 
 exec slstatus &
 
+# 2 is stderr file descriptor
 exec dwm 2>"$HOME/.cache/dwm.log"
