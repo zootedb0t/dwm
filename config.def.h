@@ -11,6 +11,7 @@ static const unsigned int gappov    = 30;       /* vert outer gap between window
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const Bool viewontag         = True;     /* Switch view on tag switch */
 static const int horizpadbar        = 5;        /* horizontal padding for statusbar */
 static const int vertpadbar         = 5;        /* vertical padding for statusbar */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
@@ -54,10 +55,13 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     iscentered   isfloating    isterminal     noswallow      monitor */
 	{ "Gimp",     NULL,       NULL,       0,            0,           1,            0,              0,            -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           0,            0,             -1,            -1 },
+	// { "firefox",  NULL,       NULL,       1 << 8,       0,           0,            0,             -1,            -1 },
+	{ "firefox", "Browser", "About Mozilla Firefox", 0, 1,           1,            0,              0,            -1 },
+	{ "firefox", "Toolkit", "Picture-in-Picture", 0, 1,              1,            0,              0,            -1 },
 	{ "firefox-nightly", "Browser", "About Firefox Nightly", 0, 1,   1,            0,              0,            -1 },
 	{ "firefox-nightly", "Toolkit", "Picture-in-Picture", 0,  1,     1,            0,              0,            -1 },
-	{ "St",       NULL,       NULL,           0,           0,        0,            1,              0,            -1 },
+	{ "mpv",      "newsboat", NULL,       0,             0,          1,            0,              0,            -1 },
+	{ "St",       NULL,       NULL,       0,             0,          0,            1,              0,            -1 },
 	{ NULL,       NULL,       "Event Tester", 0,           0,        0,            0,              1,            -1 }, /* xev */
 };
 
