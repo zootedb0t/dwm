@@ -58,9 +58,10 @@ static const Rule rules[] = {
 	// { "firefox",  NULL,       NULL,       1 << 8,       0,           0,            0,             -1,            -1 },
 	{ "firefox", "Browser", "About Mozilla Firefox", 0, 1,           1,            0,              0,            -1 },
 	{ "firefox", "Toolkit", "Picture-in-Picture", 0, 1,              1,            0,              0,            -1 },
-	{ "firefox-nightly", "Browser", "About Firefox Nightly", 0, 1,   1,            0,              0,            -1 },
+	{ "firefox-nightly", "Browser", NULL, 0, 1,   1,            0,              0,            -1 },
 	{ "firefox-nightly", "Toolkit", "Picture-in-Picture", 0,  1,     1,            0,              0,            -1 },
 	{ "mpv",      "newsboat", NULL,       0,             0,          1,            0,              0,            -1 },
+	{ "Deno",     "deno",     "Peek preview", 0,         0,          0,            0,              1,            -1 },
 	{ "St",       NULL,       NULL,       0,             0,          0,            1,              0,            -1 },
 	{ NULL,       NULL,       "Event Tester", 0,           0,        0,            0,              1,            -1 }, /* xev */
 };
