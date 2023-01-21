@@ -1,6 +1,11 @@
 # dwm - dynamic window manager
 dwm is an extremely fast, small, and dynamic window manager for X. This fork aims to remain close to `base dwm` and be functional at the same time, so only limited patches have been applied. I try to keep it updated with latest commits from [suckless](https://git.suckless.org/st/).
 
+# Look
+![Screenshot_2023-01-20-07-25-49_1920x1080](https://user-images.githubusercontent.com/62596687/213846223-01d98ac4-8a52-42a4-a1ef-afaf0612b346.png)
+
+
+
 # Requirements
 In order to build dwm you need the Xlib header files. In addition to this use may need to install some additional dependencies.
 - [Nerd Font](https://github.com/ryanoasis/nerd-fonts) - I personally like JetBrains font. Don't use mono fonts they tend to make icon smaller.
