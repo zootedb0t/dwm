@@ -125,7 +125,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_backslash, setcfact,       {.f = +0.25} },
 	{ MODKEY | ShiftMask,           XK_backslash, setcfact,       {.f = -0.25} },
 	{ MODKEY | ShiftMask,           XK_o,      setcfact,       {.f =  0.00} },
-	{ MODKEY | ShiftMask,           XK_r,      reorganizetags, {0} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY | Mod4Mask,            XK_u,      incrgaps,       {.i = +1 } },
 	{ MODKEY | Mod4Mask | ShiftMask, XK_u,     incrgaps,       {.i = -1 } },
