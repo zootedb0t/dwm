@@ -26,7 +26,7 @@ cd dwm
 sudo make clean install
 ```
 
-In scripts directory there is autostart script this used to autostart app and dwm itself. Symlink this `autostart` script to `~/.config/dwm/autostart`.
+In scripts `directory` there is `autostart` script this used to autostart app and dwm itself. Symlink this `autostart` script to `~/.config/dwm/autostart`.
 
 `ln -s ~/dwm/scripts/autostart ~/.config/dwm/autostart`
 
@@ -66,64 +66,34 @@ The bar is slstatus. All the script used in slstatus can be found in `scripts` d
 
 All patches that have applied can be found in `patches` directory.
 
-<details><summary>All applied patches</summary>
-<p>
-<li>
-<a href="https://github.com/bakkeby/patches/blob/master/dwm/dwm-alpha-systray-6.3.diff"> dwm-alpha-systray
-</a> - Add tranparency and systray to bar.
-</li>
+<details><summary>Click to view</summary>
 
-<li>
-<a href="https://dwm.suckless.org/patches/center/">dwm-center 
-</a> - Center client to current window.
-</li>
+- [dwm-alpha-systray](https://github.com/bakkeby/patches/blob/master/dwm/dwm-alpha-systray-6.3.diff) - add tranparency and systray to bar.
 
-<li>
-<a href="https://github.com/bakkeby/patches/blob/master/dwm/dwm-cfacts-vanitygaps-6.3.diff">dwm-cfacts-vanitygaps</a>  - This patch differentiates between inner and outer gaps as well as
-horizontal and vertical gaps.
-</li>
+- [dwm-center](https://dwm.suckless.org/patches/center/) - Center client to current window.
 
-<li>
-<a href="https://dwm.suckless.org/patches/cyclelayouts/">dwm-cyclelayouts</a> - Cycles through all avaiable layouts.
-</li>
+- [dwm-cfacts-vanitygaps](https://github.com/bakkeby/patches/blob/master/dwm/dwm-cfacts-vanitygaps-6.3.diff) - This patch differentiates between inner and outer gaps as well as horizontal and vertical gaps.
 
-<li>
-<a href="https://github.com/bakkeby/patches/blob/master/dwm/dwm-fullscreen-compilation-6.3.diff dwm-fullscreen-compilation-6.3.diff">dwm-fullscreen-compilation</a> - Fullscreen and acutal fullscreen patch.
-</li>
+- [dwm-cyclelayouts](https://dwm.suckless.org/patches/cyclelayouts/) - Cycles through all avaiable layouts.
 
-<li>
-<a href="https://dwm.suckless.org/patches/inplacerotate/">dwm-inplacerotate</a> - This patch provides keybindings to perform 'in place' rotations.
-</li>
+- [dwm-fullscreen-compilation](https://github.com/bakkeby/patches/blob/master/dwm/dwm-fullscreen-compilation-6.3.diff) - Fullscreen and acutal fullscreen patch.
 
-<li>
-<a href="https://dwm.suckless.org/patches/moveresize/">dwm-moveresize</a> - This changes allows you to move and resize dwm's clients using keyboard bindings.
-</li>
+- [dwm-inplacerotate](https://dwm.suckless.org/patches/inplacerotate/) - This patch provides keybindings to perform 'in place' rotations.
 
-<li>
-<a href="https://dwm.suckless.org/patches/pertag/">dwm-pertag</a> - This patch keeps layout, mwfact, barpos and nmaster per tag.
-</li>
+- [dwm-moveresize](https://dwm.suckless.org/patches/moveresize/) - This changes allows you to move and resize dwm's clients using keyboard bindings.
 
-<li>
-<a href="https://dwm.suckless.org/patches/reorganizetags/">dwm-reorganizetags</a> - Shifts all clients per tag to leftmost unoccupied tags.
-</li>
+- [dwm-pertag](https://dwm.suckless.org/patches/pertag/) - This patch keeps layout, mwfact, barpos and nmaster per tag.
 
-<li>
-<a href="https://dwm.suckless.org/patches/status2d/">dwm-status2d</a> - Status2d allows colors and rectangle drawing in your DWM status bar.
-</li>
+- [dwm-reorganizetags](https://dwm.suckless.org/patches/reorganizetags/) - Shifts all clients per tag to leftmost unoccupied tags.
 
-<li>
-<a href="https://dwm.suckless.org/patches/statuspadding/>dwm-statuspadding">dwm-statuspadding</a> - This makes the amount of horizontal and vertical padding in the status bar into configurable options.
-</li>
+- [dwm-status2d](https://dwm.suckless.org/patches/status2d/) - Status2d allows colors and rectangle drawing in your DWM status bar.
 
-<li>
-<a href="https://dwm.suckless.org/patches/swallow/">dwm-swallow</a> - Clients marked with isterminal in config.h swallow a window opened by any child process.
-</li>
+- [dwm-statuspadding](https://dwm.suckless.org/patches/statuspadding/) - This makes the amount of horizontal and vertical padding in the status bar into configurable options.
 
-<li>
-<a href="https://dwm.suckless.org/patches/xrdb/">dwm-xrdb</a> - Allows dwm to read colors from xrdb (.Xresources) at run time.
-</li>
+- [dwm-swallow](https://dwm.suckless.org/patches/swallow/) - Clients marked with isterminal in config.h swallow a window opened by any child process.
 
-</p>
+- [dwm-xrdb](https://dwm.suckless.org/patches/xrdb/) - Allows dwm to read colors from xrdb (.Xresources) at run time.
+
 </details>
 
 ### picom
