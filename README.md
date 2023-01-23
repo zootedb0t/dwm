@@ -84,8 +84,6 @@ All patches that have applied can be found in `patches` directory.
 
 - [dwm-pertag](https://dwm.suckless.org/patches/pertag/) - This patch keeps layout, mwfact, barpos and nmaster per tag.
 
-- [dwm-reorganizetags](https://dwm.suckless.org/patches/reorganizetags/) - Shifts all clients per tag to leftmost unoccupied tags.
-
 - [dwm-status2d](https://dwm.suckless.org/patches/status2d/) - Status2d allows colors and rectangle drawing in your DWM status bar.
 
 - [dwm-statuspadding](https://dwm.suckless.org/patches/statuspadding/) - This makes the amount of horizontal and vertical padding in the status bar into configurable options.

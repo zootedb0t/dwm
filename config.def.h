@@ -18,7 +18,7 @@ static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows sel
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray             = 1;   /* 0 means no systray */
-static const char *fonts[]          = { "VictorMono Nerd Font:style=Regular:size=8:antialias=true:autohint=true",
+static const char *fonts[]          = { "VictorMono Nerd Font:style=SemiBold:size=8:antialias=true:autohint=true",
                                         "Material Design Icons Desktop:size=8:antialias=true:autohint=true", "JoyPixels:size:5:antialias=true:autohint=true"
                                       };
 static const char dmenufont[]       = "monospace:size=10";
@@ -57,13 +57,14 @@ static const Rule rules[] = {
 	{ "Gimp",     NULL,       NULL,       0,            0,           1,            0,              0,            -1 },
 	// { "firefox",  NULL,       NULL,       1 << 8,       0,           0,            0,             -1,            -1 },
 	{ "firefox", "Browser", "About Mozilla Firefox", 0, 1,           1,            0,              0,            -1 },
-	{ "firefox", "Toolkit", "Picture-in-Picture", 0, 1,              1,            0,              0,            -1 },
-	{ "firefox-nightly", "Browser", NULL, 0, 1,   1,            0,              0,            -1 },
+	{ "firefox", "Toolkit", "Picture-in-Picture", 0,    1,           1,            0,              0,            -1 },
+	{ "firefox-nightly", "Browser", NULL, 0,            1,           1,            0,              0,            -1 },
 	{ "firefox-nightly", "Toolkit", "Picture-in-Picture", 0,  1,     1,            0,              0,            -1 },
-	{ "mpv",      "newsboat", NULL,       0,             0,          1,            0,              0,            -1 },
-	{ "Deno",     "deno",     "Peek preview", 0,         0,          0,            0,              1,            -1 },
-	{ "St",       NULL,       NULL,       0,             0,          0,            1,              0,            -1 },
-	{ NULL,       NULL,       "Event Tester", 0,           0,        0,            0,              1,            -1 }, /* xev */
+	{ "thunderbird-beta","Mail", "About Mozilla Thunderbird", 0,  1, 1,            0,              0,            -1 },
+	{ "mpv",      "newsboat", NULL,       0,            0,           1,            0,              0,            -1 },
+	{ "Deno",     "deno",     "Peek preview", 0,        0,           0,            0,              1,            -1 },
+	{ "St",       NULL,       NULL,       0,            0,           0,            1,              0,            -1 },
+	{ NULL,       NULL,       "Event Tester", 0,        0,           0,            0,              1,            -1 }, /* xev */
 };
 
 /* layout(s) */
@@ -122,8 +123,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_backslash, setcfact,       {.f = +0.25} },
-	{ MODKEY | ShiftMask,           XK_backslash, setcfact,       {.f = -0.25} },
+	{ MODKEY,                       XK_backslash, setcfact,    {.f = +0.25} },
+	{ MODKEY | ShiftMask,           XK_backslash, setcfact,    {.f = -0.25} },
 	{ MODKEY | ShiftMask,           XK_o,      setcfact,       {.f =  0.00} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY | Mod4Mask,            XK_u,      incrgaps,       {.i = +1 } },
