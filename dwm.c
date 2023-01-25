@@ -316,6 +316,7 @@ static void xrdb(const Arg *arg);
 static void xinitvisual();
 static void zoom(const Arg *arg);
 static void killunsel(const Arg *arg);
+static void reset_mfact(const Arg *arg);
 
 static pid_t getparentprocess(pid_t p);
 static int isdescprocess(pid_t p, pid_t c);
@@ -2596,6 +2597,11 @@ togglefloating(const Arg *arg)
 		resize(c, c->x, c->y, c->w, c->h, 0);
 	}
 	arrange(c->mon);
+}
+
+void reset_mfact(const Arg *arg) {
+  Arg new_mfact = {.f = mfact + 1};
+  setmfact(&new_mfact);
 }
 
 void
