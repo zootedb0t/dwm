@@ -12,11 +12,22 @@ dwm is an extremely fast, small, and dynamic window manager for X. This build ai
 
 In order to build dwm you need the Xlib header files. In addition to this use may need to install some additional dependencies.
 
-- [Nerd Font](https://github.com/ryanoasis/nerd-fonts) - I personally like JetBrains font. You can use whatever you like. Don't use mono fonts they tend to make icon smaller.
+- [Nerd Font](https://github.com/ryanoasis/nerd-fonts) - I personally like JetBrains font. You can use whatever you like. Don't use monospace fonts they tend to make icon smaller.
 - [picom](https://github.com/yshui/picom) - Compositor for X11 window.
 - [xwallpaper](https://github.com/stoeckmann/xwallpaper) - For setting wallpaper for x window.
 - [dmenu](https://tools.suckless.org/dmenu/) - A suckless program that can be used as application launcher and has been used in various scripts.
 - [slstatus](https://tools.suckless.org/slstatus/) - Used to set statusbar in dwm.
+- [pywal](https://github.com/dylanaraps/pywal) - Change dwm colors according to wallpaper.
+
+# Features
+- Read `.Xresources` colors, dwm colors can be changed according to wallpaper without compiling or restarting the dwm.
+- Window swallowing. If a program starts from terminal, the program will temporarily take its place to save space. This behavior is controlled through `isterminal`
+and `noswallow` values in `config.def.h`
+- Gaps is allowed across all layouts. Gap can be turned `on` or `off` through <kbd>super+ctrl+0</kbd>.
+- shiftview: Cycle through non-vacant tags <kbd>super+g/;</kbd>
+- Actual fullscreen <kbd>super+f</kbd> and fakefullscreen <kbd>super+shift+f</kbd>.
+
+# Running dwm
 
 ## Installation
 
@@ -26,16 +37,12 @@ cd dwm
 sudo make clean install
 ```
 
-In scripts `directory` there is `autostart` script this used to autostart app and dwm itself. Symlink this `autostart` script to `~/.config/dwm/autostart`.
-
-`ln -s ~/dwm/scripts/autostart ~/.config/dwm/autostart`
+In scripts `directory` there is `autostart` script this used to autostart app and dwm itself. Symlink this `autostart` script to `~/.config/dwm/autostart`. Like this: `ln -s ~/dwm/scripts/autostart ~/.config/dwm/autostart`
 
 Edit `config.mk` to match your local setup (dwm is installed into
 the /usr/local namespace by default).
 
 Afterwards enter the following command to build and install dwm: `sudo make clean install`
-
-# Running dwm
 
 ## With startx
 
@@ -52,9 +59,9 @@ Make sure to change username in `dwm.desktop` file.
 
 The configuration of dwm is done by editing config.def.h and (re)compiling the source code. After editing `config.def.h` remove `config.h` and recompile the program.
 
-If you want dwm to use pywal colors. Add this your `Xresources` file. Change username in file path.
+If you want dwm to use pywal colors. Add this in your `Xresources` file. Change `user` in file path with your username.
 
-`#include "/home/stoney/.cache/wal/colors.Xresources"`
+`#include "/home/user/.cache/wal/colors.Xresources"`
 
 ## Misc notes
 
