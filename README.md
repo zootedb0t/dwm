@@ -18,16 +18,22 @@ In order to build dwm you need the Xlib header files. In addition to this use ma
 - [picom](https://github.com/yshui/picom) - Compositor for X11 window.
 - [xwallpaper](https://github.com/stoeckmann/xwallpaper) - For setting wallpaper for x window.
 - [dmenu](https://tools.suckless.org/dmenu/) - A suckless program that can be used as application launcher and has been used in various scripts.
-- [slstatus](https://tools.suckless.org/slstatus/) - Used to set statusbar in dwm.
+- [slstatus](https://tools.suckless.org/slstatus/) - For statusbar in dwm.
 - [pywal](https://github.com/dylanaraps/pywal) - Change dwm colors according to wallpaper.
 
 # Features
+
+- Various layout have been added like `spiral`, `dwindle`, `deck`, `bstack`, `horizgrid`, `gaplessgrid`, `centerdmaster`, `centeredfloatingmaster`.
 - Read `.Xresources` colors, dwm colors can be changed according to wallpaper without compiling or restarting the dwm.
 - Window swallowing. If a program starts from terminal, the program will temporarily take its place to save space. This behavior is controlled through `isterminal`
-and `noswallow` values in `config.def.h`
+  and `noswallow` values in `config.def.h`
 - Gaps is allowed across all layouts. Gap can be turned `on` or `off` through <kbd>super+ctrl+0</kbd>.
 - shiftview: Cycle through non-vacant tags <kbd>super+g/;</kbd>
 - Actual fullscreen <kbd>super+f</kbd> and fakefullscreen <kbd>super+shift+f</kbd>.
+- Both `mfact` and `cfact` can be changed. This provides the ability to assign different weights to clients in their respective stack in tiled layout.
+- Statusbar can be made transparent while keeping text opaque. Just change `baralpha` to your liking.
+- DWM bar support system-tray. So `wifi`, `bluetooth` can be managed from statusbar.
+- Cycle through all layout using <kbd>super+space</kbd>.
 
 # Running dwm
 
