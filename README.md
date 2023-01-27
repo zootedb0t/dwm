@@ -34,6 +34,7 @@ In order to build dwm you need the Xlib header files. In addition to this use ma
 - Statusbar can be made transparent while keeping text opaque. Just change `baralpha` to your liking.
 - DWM bar support system-tray. So `wifi`, `bluetooth` can be managed from statusbar.
 - Cycle through all layout using <kbd>super+space</kbd>.
+- Toggle scratchpad window with <kbd>super+xk_grave</kbd>.
 
 # Running dwm
 
@@ -106,6 +107,8 @@ All patches that have applied can be found in `patches` directory.
 - [dwm-swallow](https://dwm.suckless.org/patches/swallow/) - Clients marked with isterminal in config.h swallow a window opened by any child process.
 
 - [dwm-xrdb](https://dwm.suckless.org/patches/xrdb/) - Allows dwm to read colors from xrdb (.Xresources) at run time.
+
+- [dwm-scratchpad](https://dwm.suckless.org/patches/scratchpad/) - Allows you to spawn or restore a floating terminal window.
 
 </details>
 
