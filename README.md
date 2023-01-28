@@ -12,7 +12,7 @@ dwm is an extremely fast, small, and dynamic window manager for X. This build ai
 
 # Requirements
 
-In order to build dwm you need the Xlib header files. In addition to this use may need to install some additional dependencies.
+In order to build dwm you need the `Xlib` header files. In addition to this use may need to install some additional dependencies like `XCB` header files for `swallow` patch.
 
 - [Nerd Font](https://github.com/ryanoasis/nerd-fonts) - I personally like JetBrains font. You can use whatever you like. Don't use monospace fonts they tend to make icon smaller.
 - [picom](https://github.com/yshui/picom) - Compositor for X11 window.
@@ -33,7 +33,7 @@ In order to build dwm you need the Xlib header files. In addition to this use ma
 - Both `mfact` and `cfact` can be changed. This provides the ability to assign different weights to clients in their respective stack in tiled layout.
 - Statusbar can be made transparent while keeping text opaque. Just change `baralpha` to your liking.
 - DWM bar support system-tray. So `wifi`, `bluetooth` can be managed from statusbar.
-- Cycle through all layout using <kbd>super+space</kbd>.
+- Cycle through all layout using <kbd>super+/</kbd>.
 - Toggle scratchpad window with <kbd>super+xk_grave</kbd>.
 
 # Running dwm
