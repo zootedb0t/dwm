@@ -84,29 +84,29 @@ All patches that have applied can be found in `patches` directory.
 
 <details><summary>Click to view</summary>
 
-- [dwm-alpha-systray](https://github.com/bakkeby/patches/blob/master/dwm/dwm-alpha-systray-6.3.diff) - add tranparency and systray to bar.
+- [dwm-alpha-systray](https://github.com/bakkeby/patches/blob/master/dwm/dwm-alpha-systray-6.3.diff) - Add tranparency to systray and  dwm bar.
 
-- [dwm-center](https://dwm.suckless.org/patches/center/) - Center client to current window.
+- [dwm-center](https://dwm.suckless.org/patches/center/) - Center floating client window.
 
 - [dwm-cfacts-vanitygaps](https://github.com/bakkeby/patches/blob/master/dwm/dwm-cfacts-vanitygaps-6.3.diff) - This patch differentiates between inner and outer gaps as well as horizontal and vertical gaps.
 
 - [dwm-cyclelayouts](https://dwm.suckless.org/patches/cyclelayouts/) - Cycles through all avaiable layouts.
 
-- [dwm-fullscreen-compilation](https://github.com/bakkeby/patches/blob/master/dwm/dwm-fullscreen-compilation-6.3.diff) - Fullscreen and acutal fullscreen patch.
+- [dwm-fullscreen-compilation](https://github.com/bakkeby/patches/blob/master/dwm/dwm-fullscreen-compilation-6.3.diff) -  Fake fullscreen and acutal fullscreen patch.
 
 - [dwm-inplacerotate](https://dwm.suckless.org/patches/inplacerotate/) - This patch provides keybindings to perform 'in place' rotations.
 
-- [dwm-moveresize](https://dwm.suckless.org/patches/moveresize/) - This changes allows you to move and resize dwm's clients using keyboard bindings.
+- [dwm-moveresize](https://dwm.suckless.org/patches/moveresize/) - This allows you to move and resize dwm's floating clients using keyboard bindings.
 
 - [dwm-pertag](https://dwm.suckless.org/patches/pertag/) - This patch keeps layout, mwfact, barpos and nmaster per tag.
 
-- [dwm-status2d](https://dwm.suckless.org/patches/status2d/) - Status2d allows colors and rectangle drawing in your DWM status bar.
+- [dwm-status2d](https://dwm.suckless.org/patches/status2d/) - Status2d allows colors and rectangle drawing in your dwm status bar.
 
 - [dwm-statuspadding](https://dwm.suckless.org/patches/statuspadding/) - This makes the amount of horizontal and vertical padding in the status bar into configurable options.
 
 - [dwm-swallow](https://dwm.suckless.org/patches/swallow/) - Clients marked with isterminal in config.h swallow a window opened by any child process.
 
-- [dwm-xrdb](https://dwm.suckless.org/patches/xrdb/) - Allows dwm to read colors from xrdb (.Xresources) at run time.
+- [dwm-xrdb](https://dwm.suckless.org/patches/xrdb/) - Allows dwm to read colors from xrdb `.Xresources` at run time.
 
 - [dwm-scratchpad](https://dwm.suckless.org/patches/scratchpad/) - Allows you to spawn or restore a floating terminal window.
 
