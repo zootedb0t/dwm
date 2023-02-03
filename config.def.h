@@ -61,7 +61,7 @@ static const Rule rules[] = {
 	{ "firefox", "Toolkit", "Picture-in-Picture", 0,    1,           1,            0,              0,            -1 },
 	{ "firefox-nightly", "Browser", NULL, 0,            1,           1,            0,              0,            -1 },
 	{ "firefox-nightly", "Toolkit", "Picture-in-Picture", 0,  1,     1,            0,              0,            -1 },
-	{ "thunderbird-beta","Mail", "About Mozilla Thunderbird", 0,  1, 1,            0,              0,            -1 },
+	{ "thunderbird-beta", "Mail", "About Mozilla Thunderbird", 0,  1, 1,            0,              0,            -1 },
 	{ "mpv",      "newsboat", NULL,       0,            0,           1,            0,              0,            -1 },
 	{ "Deno",     "deno",     "Peek preview", 0,        0,           0,            0,              1,            -1 },
 	{ "St",       NULL,       NULL,       0,            0,           0,            1,              0,            -1 },

@@ -1177,10 +1177,10 @@ drawbar(Monitor *m)
 		if (m->sel) {
 			// Default highlight behaviour. Change titlehighlight from config.def.h
 			if (titlehighlight) {
-			  drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
+				drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
 			} else {
-        // Now window title will get normal highlight
-			  drw_setscheme(drw, scheme[SchemeNorm]);
+				// Now window title will get normal highlight
+				drw_setscheme(drw, scheme[SchemeNorm]);
 			}
 			drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
 			if (m->sel->isfloating) {
@@ -1498,7 +1498,7 @@ keypress(XEvent *e)
 	XKeyEvent *ev;
 
 	ev = &e->xkey;
-  keysym = XkbKeycodeToKeysym(dpy, (KeyCode)ev->keycode, 0, 0);
+	keysym = XkbKeycodeToKeysym(dpy, (KeyCode)ev->keycode, 0, 0);
 	for (i = 0; i < LENGTH(keys); i++)
 		if (keysym == keys[i].keysym
 		                && CLEANMASK(keys[i].mod) == CLEANMASK(ev->state)
@@ -2608,9 +2608,11 @@ togglefloating(const Arg *arg)
 	arrange(c->mon);
 }
 
-void reset_mfact(const Arg *arg) {
-  Arg new_mfact = {.f = mfact + 1};
-  setmfact(&new_mfact);
+void
+reset_mfact(const Arg *arg)
+{
+	Arg new_mfact = {.f = mfact + 1};
+	setmfact(&new_mfact);
 }
 
 void
@@ -2647,8 +2649,9 @@ togglescratch(const Arg *arg)
 			focus(c);
 			restack(selmon);
 		}
-	} else
+	} else {
 		spawn(arg);
+	}
 }
 
 void
