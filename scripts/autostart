@@ -1,6 +1,7 @@
 #!/bin/sh
 
-xwallpaper --zoom ~/.local/share/bg.jpg
+# Select random wallpaper at startup
+set_wallpaper.sh &
 
 xrdb -merge ~/.Xresources
 
@@ -17,8 +18,6 @@ nm-applet &
 sxhkd &
 
 # ~/.local/src/suckless/dwm/scripts/bar.sh &
-
-~/.local/bin/battery.sh &
 
 exec slstatus &
 
