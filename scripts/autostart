@@ -1,24 +1,26 @@
 #!/bin/sh
 
-# Select random wallpaper at startup
+# Select random wallpaper at startup. Dependency xwallpaper, pywal 
 set_wallpaper.sh &
 
-xrdb -merge ~/.Xresources
-
+# Set brightness level at startup
 xbacklight -set 70 &
 
+# Change auto-repeat rate for faster scrolling
 xset r rate 210 40
 
 picom --config /home/stoney/.config/picom/picom.conf &
 
+# Authentication agent
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
+# Network-manager systray
 nm-applet &
 
+# Keybindings
 sxhkd &
 
-# ~/.local/src/suckless/dwm/scripts/bar.sh &
-
+# Start statusbar
 exec slstatus &
 
 # 2 is stderr file descriptor

@@ -2,6 +2,6 @@
 Encoding=UTF-8
 Name=DWM
 Comment=the dynamic window manager
-Exec=/home/stoney/.config/dwm/autostart
+Exec=/change this to your autostart script path/
 Icon=dwm
 Type=XSession
