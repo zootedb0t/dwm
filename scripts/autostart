@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Select random wallpaper at startup. Dependency xwallpaper, pywal 
+# Select random wallpaper at startup. Dependency xwallpaper, pywal
 set_wallpaper.sh &
 
 # Set brightness level at startup
@@ -19,6 +19,9 @@ nm-applet &
 
 # Keybindings
 sxhkd &
+
+# Menu
+xclickroot ~/.local/bin/menu.sh &
 
 # Start statusbar
 exec slstatus &

@@ -6,7 +6,6 @@ dwm is an extremely fast, small, and dynamic window manager for X. This build ai
 
 ![Screenshot_2023-02-17-09-49-41_1920x1080](https://user-images.githubusercontent.com/62596687/219708065-be51d85e-39c4-4369-abf5-9b88d09d3d19.png)
 
-
 ![Screenshot_2023-01-24-01-02-01_1920x1080](https://user-images.githubusercontent.com/62596687/214235380-078d83a6-66e9-4ecd-92de-8fde8776db11.png)
 
 ![Screenshot_2023-01-20-11-47-44_1920x1080](https://user-images.githubusercontent.com/62596687/213862029-809b0d77-6489-4edf-85ee-26449d865cc3.png)
@@ -23,21 +22,25 @@ In order to build dwm you need the `Xlib` header files. In addition to this use 
 - [slstatus](https://tools.suckless.org/slstatus/) - For statusbar in dwm. Check my [build](https://github.com/zootedb0t/suckless-tools/tree/main/slstatus).
 - [pywal](https://github.com/dylanaraps/pywal) - A tool that generates a color palette from the dominant colors in an image. Allows dwm to change colors according to wallpaper.
 - [sxhkd](https://github.com/baskerville/sxhkd) - For external [keybindings](https://github.com/zootedb0t/dotfiles/blob/main/sxhkd/.config/sxhkd/sxhkdrc).
+- [xmenu](https://github.com/phillbush/xmenu) - Menu utility for X.
+- [xclickroot](https://github.com/phillbush/xclickroot) - Shows a menu when `right clicked` on root menu.
 
 # Features
 
-- Various layout have been added like `spiral`, `dwindle`, `deck`, `bstack`, `horizgrid`, `gaplessgrid`, `centerdmaster`, `centeredfloatingmaster`.
+- Various layout have been added like `spiral`, `dwindle`, `deck`, `bstack`, `horizgrid`, `gaplessgrid`, `centerdmaster`, `centeredfloatingmaster`, etc.
+  Right click on layout icon and you get a list of all layouts to choose from. Change layout order by editing `layoutmenu.sh`. Make sure this script is in your path.
 - Read `.Xresources` colors, so dwm changes colors according to wallpaper without compiling or restarting the dwm.
 - Window swallowing. If a program starts from terminal, the program will temporarily take its place to save space. This behavior is controlled through `isterminal`
   and `noswallow` values in `config.def.h`
 - Gaps are allowed across all layouts.
 - Support `actual fullscreen` for any window using single keybindings and `fake fullscreen` the ability to have windows go fullscreen within the size and position the window is currently in.
-- Both `mfact`  and `cfact` can be changed. This provides the ability to assign different weights to clients in their respective stack.
+- Both `mfact` and `cfact` can be changed. This provides the ability to assign different weights to clients in their respective stack.
 - Statusbar can be made transparent while keeping text opaque. Just change `baralpha` to your liking in `config.def.h`.
 - DWM bar support system-tray. So `wifi`, `bluetooth`, `vpn` can be managed from statusbar.
 - Support scratchpad.
 - Floating clients always open in center.
 - Floating window can be `resized`, `moved` from keyboard.
+- Right click on root window to get a menu. Change menu items by editing a shell [script](https://github.com/zootedb0t/dotfiles/blob/main/scripts/.local/bin/menu.sh).
 
 # Keybindings
 
@@ -47,7 +50,7 @@ In order to build dwm you need the `Xlib` header files. In addition to this use 
 - Toggle `actual fullscreen` with <kbd>super+f</kbd> and `fake fullscreen` with <kbd>super+shift+f</kbd>.
 - Cycle through non-vacant tags using <kbd>super+g/;</kbd>
 - Change layout with <kbd>super+/</kbd> goto next layout <kbd>super+shift+/</kbd> goto previous layout.
--  To change `mfact` <kbd>super+l</kbd>(increase) for `cfact` use <kbd>super+\\</kbd>(increase),<kbd>super+shift+\\</kbd>(decrease)
+- To change `mfact` <kbd>super+l</kbd>(increase) for `cfact` use <kbd>super+\\</kbd>(increase),<kbd>super+shift+\\</kbd>(decrease)
 - <kbd>super+~</kbd> - Toggle scratchpad window with.
 - <kbd>super+up,down,left,right</kbd> to move floating window <kbd>super+shift+up,down,left,right</kbd> to resize window.
 
@@ -88,6 +91,9 @@ If you want dwm to change colors according to your wallpaper. Then include `pywa
 ### Bar
 
 The bar is slstatus. All the script used in slstatus can be found in `scripts` directory. My slstatus [build](https://github.com/zootedb0t/suckless-tools/tree/main/slstatus).
+
+### Menu
+Menu is generated using `xmenu`. Entries is written in [shell script](https://github.com/zootedb0t/dotfiles/blob/main/scripts/.local/bin/menu.sh).
 
 ### patches
 
