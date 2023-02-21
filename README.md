@@ -10,6 +10,8 @@ dwm is an extremely fast, small, and dynamic window manager for X. This build ai
 
 ![Screenshot_2023-01-20-11-47-44_1920x1080](https://user-images.githubusercontent.com/62596687/213862029-809b0d77-6489-4edf-85ee-26449d865cc3.png)
 
+![Screenshot_2023-02-21-07-05-29_1920x1080](https://user-images.githubusercontent.com/62596687/220269662-bf4271c2-0168-48be-838e-ff3821b0a334.png)
+
 # Requirements
 
 In order to build dwm you need the `Xlib` header files. In addition to this use may need to install some additional dependencies like `XCB` header files for `swallow` patch.
@@ -23,7 +25,7 @@ In order to build dwm you need the `Xlib` header files. In addition to this use 
 - [pywal](https://github.com/dylanaraps/pywal) - A tool that generates a color palette from the dominant colors in an image. Allows dwm to change colors according to wallpaper.
 - [sxhkd](https://github.com/baskerville/sxhkd) - For external [keybindings](https://github.com/zootedb0t/dotfiles/blob/main/sxhkd/.config/sxhkd/sxhkdrc).
 - [xmenu](https://github.com/phillbush/xmenu) - Menu utility for X.
-- [xclickroot](https://github.com/phillbush/xclickroot) - Shows a menu when `right clicked` on root menu.
+- [xclickroot](https://github.com/phillbush/xclickroot) - xclickroot runs a command every time a given mouse button is pressed on the root window.
 
 # Features
 
@@ -40,7 +42,7 @@ In order to build dwm you need the `Xlib` header files. In addition to this use 
 - Support scratchpad.
 - Floating clients always open in center.
 - Floating window can be `resized`, `moved` from keyboard.
-- Right click on root window to get a menu. Change menu items by editing a shell [script](https://github.com/zootedb0t/dotfiles/blob/main/scripts/.local/bin/menu.sh).
+- Supports right click on root window to get a menu. Menu entries are defined in a shell [script](https://github.com/zootedb0t/dotfiles/blob/main/scripts/.local/bin/menu.sh).
 
 # Keybindings
 
@@ -93,7 +95,7 @@ If you want dwm to change colors according to your wallpaper. Then include `pywa
 The bar is slstatus. All the script used in slstatus can be found in `scripts` directory. My slstatus [build](https://github.com/zootedb0t/suckless-tools/tree/main/slstatus).
 
 ### Menu
-Menu is generated using `xmenu`. Entries is written in [shell script](https://github.com/zootedb0t/dotfiles/blob/main/scripts/.local/bin/menu.sh).
+Menu is generated using `xmenu`. Entries are written in [shell script](https://github.com/zootedb0t/dotfiles/blob/main/scripts/.local/bin/menu.sh).
 
 ### patches
 
