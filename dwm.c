@@ -1543,12 +1543,12 @@ loadxrdb()
 			xrdb = XrmGetStringDatabase(resm);
 
 			if (xrdb != NULL) {
-				XRDB_LOAD_COLOR("color0", normbordercolor);
-				XRDB_LOAD_COLOR("color0", normbgcolor);
-				XRDB_LOAD_COLOR("color6", normfgcolor);
-				XRDB_LOAD_COLOR("color8", selbordercolor);
-				XRDB_LOAD_COLOR("color0", selfgcolor);
-				XRDB_LOAD_COLOR("color14", selbgcolor);
+				XRDB_LOAD_COLOR("dwm.color0", normbordercolor);
+				XRDB_LOAD_COLOR("dwm.color0", normbgcolor);
+				XRDB_LOAD_COLOR("dwm.color6", normfgcolor);
+				XRDB_LOAD_COLOR("dwm.color8", selbordercolor);
+				XRDB_LOAD_COLOR("dwm.color0", selfgcolor);
+				XRDB_LOAD_COLOR("dwm.color14", selbgcolor);
 			}
 		}
 	}
@@ -1776,7 +1776,7 @@ movemouse(const Arg *arg)
 			handler[ev.type](&ev);
 			break;
 		case MotionNotify:
-			if ((ev.xmotion.time - lasttime) <= (1000 / 60)) {
+			if ((ev.xmotion.time - lasttime) <= (1000 / 1000)) {
 				continue;
 			}
 			lasttime = ev.xmotion.time;

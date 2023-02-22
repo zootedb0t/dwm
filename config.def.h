@@ -61,10 +61,12 @@ static const Rule rules[] = {
 	{ "firefox", "Toolkit", "Picture-in-Picture", 0,    1,           1,            0,              0,            -1 },
 	{ "firefox-nightly", "Browser", NULL, 0,            1,           1,            0,              0,            -1 },
 	{ "firefox-nightly", "Toolkit", "Picture-in-Picture", 0,  1,     1,            0,              0,            -1 },
-	{ "thunderbird-beta", "Mail", "About Mozilla Thunderbird", 0,  1, 1,            0,              0,            -1 },
+	{ "thunderbird-beta", "Mail", "About Mozilla Thunderbird", 0,  1, 1,           0,              0,            -1 },
 	{ "mpv",      "newsboat", NULL,       0,            0,           1,            0,              0,            -1 },
 	{ "Deno",     "deno",     "Peek preview", 0,        0,           0,            0,              1,            -1 },
 	{ "Protonvpn", "protonvpn", "Proton VPN", 0,        0,           1,            0,              1,            -1 },
+	{ "Galculator", "galculator", "galculator", 0,      1,           1,            0,              1,            -1 },
+	{ "Pavucontrol", "pavucontrol", "Volume Control", 0, 1,          1,            0,              1,            -1 },
 	{ "St",       NULL,       NULL,       0,            0,           0,            1,              0,            -1 },
 	{ NULL,       NULL,       "Event Tester", 0,        0,           0,            0,              1,            -1 }, /* xev */
 };
@@ -107,7 +109,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
+static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
