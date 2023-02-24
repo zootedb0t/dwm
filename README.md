@@ -131,6 +131,8 @@ All applied patches can be found in `patches` directory.
 
 - [dwm-scratchpad](https://dwm.suckless.org/patches/scratchpad/) - Allows you to spawn or restore a floating terminal window.
 
+- [dwm-layoutmenu](https://dwm.suckless.org/patches/layoutmenu/) - This patch adds a context menu for layout switching. Right click on layout icon to bring a menu prompt, and switches to selected one.
+
 </details>
 
 ### picom
