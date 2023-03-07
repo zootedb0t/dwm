@@ -1,9 +1,9 @@
 #!/bin/sh
 
-muted=$(amixer -D pulse get Master | grep '%' | grep -oE '[^ ]+$' | grep off | head -n 1)
+muted="$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk -F' ' '{print $3}' | awk -F'[][]' '{print $2}')"
 vol=$(amixer sget Master | grep 'Right:' | awk -F'[' '{print $2}' | awk -F'%' '{print $1}')
 
-if [ "$muted" = "[off]" ]; then
+if [ "$muted" = "MUTED" ]; then
 	echo " muted"
 else
 	echo " $vol"
