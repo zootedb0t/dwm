@@ -52,10 +52,11 @@ In order to build dwm you need the `Xlib` header files. In addition to this use 
 - <kbd>super+p</kbd> - Open dmenu launcher.
 - Gap can be turned `on` or `off` through <kbd>super+ctrl+0</kbd>.
 - Toggle `actual fullscreen` with <kbd>super+f</kbd> and `fake fullscreen` with <kbd>super+shift+f</kbd>.
-- Cycle through non-vacant tags using <kbd>super+g/;</kbd>
+- Cycle through non-vacant tags using <kbd>super+Tab</kbd> or <kbd>super+shift+Tab</kbd>.
+- Move window to next/previous `tag` with <kbd>super+;</kbd> or <kbd>super+shift+;</kbd>.
 - Change layout with <kbd>super+/</kbd> goto next layout <kbd>super+shift+/</kbd> goto previous layout.
 - To change `mfact` <kbd>super+l</kbd>(increase) for `cfact` use <kbd>super+\\</kbd>(increase),<kbd>super+shift+\\</kbd>(decrease)
-- <kbd>super+~</kbd> - Toggle scratchpad window with.
+- <kbd>super+shift+s</kbd> - Toggle scratchpad window with.
 - <kbd>super+up,down,left,right</kbd> to move floating window <kbd>super+shift+up,down,left,right</kbd> to resize window.
 
 # Running dwm
@@ -97,6 +98,7 @@ If you want dwm to change colors according to your wallpaper. Then include `pywa
 The bar is slstatus. All the script used in slstatus can be found in `scripts` directory. My slstatus [build](https://github.com/zootedb0t/suckless-tools/tree/main/slstatus).
 
 ### Menu
+
 Menu is generated using `xmenu`. Entries are written in [shell script](https://github.com/zootedb0t/dotfiles/blob/main/scripts/.local/bin/menu.sh).
 
 ### patches
@@ -132,6 +134,8 @@ All applied patches can be found in `patches` directory.
 - [dwm-scratchpad](https://dwm.suckless.org/patches/scratchpad/) - Allows you to spawn or restore a floating terminal window.
 
 - [dwm-layoutmenu](https://dwm.suckless.org/patches/layoutmenu/) - This patch adds a context menu for layout switching. Right click on layout icon to bring a menu prompt, and switches to selected one.
+
+- [dwm-alternativetags](https://dwm.suckless.org/patches/alternativetags/) - This patch introduces alternative tags which can be switched on the fly for the sole purpose of providing visual aid.
 
 </details>
 
