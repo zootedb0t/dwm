@@ -6,13 +6,14 @@ shiftview(const Arg *arg)
 	Client *c;
 	unsigned int tagmask = 0;
 
-	if (arg->i > 0) // left circular shift
-		shifted.ui = (selmon->tagset[selmon->seltags] << arg->i)
-		             | (selmon->tagset[selmon->seltags] >> (LENGTH(tags) - arg->i));
+  // Uncomment this if you want to move between non-vacant tags.
+	// if (arg->i > 0) // left circular shift
+	// 	shifted.ui = (selmon->tagset[selmon->seltags] << arg->i)
+	// 	             | (selmon->tagset[selmon->seltags] >> (LENGTH(tags) - arg->i));
 
-	else // right circular shift
-		shifted.ui = selmon->tagset[selmon->seltags] >> (- arg->i)
-		             | selmon->tagset[selmon->seltags] << (LENGTH(tags) + arg->i);
+	// else // right circular shift
+	// 	shifted.ui = selmon->tagset[selmon->seltags] >> (- arg->i)
+	// 	             | selmon->tagset[selmon->seltags] << (LENGTH(tags) + arg->i);
 
 	for (c = selmon->clients; c; c = c->next)
 #if SCRATCHPADS_PATCH

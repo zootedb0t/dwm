@@ -58,6 +58,7 @@ In order to build dwm you need the `Xlib` header files. In addition to this use 
 - To change `mfact` <kbd>super+l</kbd>(increase) for `cfact` use <kbd>super+\\</kbd>(increase),<kbd>super+shift+\\</kbd>(decrease)
 - <kbd>super+shift+s</kbd> - Toggle scratchpad window with.
 - <kbd>super+up,down,left,right</kbd> to move floating window <kbd>super+shift+up,down,left,right</kbd> to resize window.
+- <kbd>super+a</kbd> to toggle alternative tags.
 
 # Running dwm
 
@@ -137,11 +138,13 @@ All applied patches can be found in `patches` directory.
 
 - [dwm-alternativetags](https://dwm.suckless.org/patches/alternativetags/) - This patch introduces alternative tags which can be switched on the fly for the sole purpose of providing visual aid.
 
+- [dwm-hidevacantags](https://dwm.suckless.org/patches/hide_vacant_tags/) - This patch prevents dwm from drawing tags with no clients (i.e. vacant) on the bar.
+
 </details>
 
 ### picom
 
-To prevent picom from drawing shadow on your statusbar add therse to your `picom.conf`
+To prevent picom from drawing shadow on your statusbar add this to your `picom.conf`
 
 ```
 shadow-exclude = [
