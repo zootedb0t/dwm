@@ -12,7 +12,8 @@ dwm is an extremely fast, small, and dynamic window manager for X. This build ai
 
 ![Screenshot_2023-01-20-11-47-44_1920x1080](https://user-images.githubusercontent.com/62596687/213862029-809b0d77-6489-4edf-85ee-26449d865cc3.png)
 
-![Screenshot_2023-02-21-07-05-29_1920x1080](https://user-images.githubusercontent.com/62596687/220269662-bf4271c2-0168-48be-838e-ff3821b0a334.png)
+![Screenshot_2023-03-28-10-52-34_1920x1080](https://user-images.githubusercontent.com/62596687/228319511-e9b0412a-83a1-406f-8eae-4a23cba49069.png)
+
 
 # Requirements
 
@@ -28,7 +29,7 @@ In order to build `dwm` you need the `Xlib` header files.
 - [sxhkd](https://github.com/baskerville/sxhkd) - For external [keybindings](https://github.com/zootedb0t/dotfiles/blob/main/sxhkd/.config/sxhkd/sxhkdrc).
 - [xmenu](https://github.com/phillbush/xmenu) - Menu utility for X.
 - [xclickroot](https://github.com/phillbush/xclickroot) - xclickroot runs a command every time a given mouse button is pressed on the root window.
-- [XCB Header Files](https://xcb.freedesktop.org/) - The X protocol C-language Binding (XCB) for window swallowing. 
+- [XCB Header Files](https://xcb.freedesktop.org/) - The X protocol C-language Binding (XCB) for `window swallowing`. 
 - [IMLIB2](https://docs.enlightenment.org/api/imlib2/html/) - Library that does image file loading and saving as well as rendering, manipulation, arbitrary polygon support needed for `winicon` patch.
 
 # Features
