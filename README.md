@@ -16,7 +16,7 @@ dwm is an extremely fast, small, and dynamic window manager for X. This build ai
 
 # Requirements
 
-In order to build dwm you need the `Xlib` header files. In addition to this use may need to install some additional dependencies like `XCB` header files for `swallow` patch.
+In order to build `dwm` you need the `Xlib` header files.
 
 - [Nerd Font](https://github.com/ryanoasis/nerd-fonts) - I personally like JetBrains font. You can use whatever you like. Don't use monospace fonts they tend to make icon smaller.
 - [picom](https://github.com/yshui/picom) - Compositor for X11 window.
@@ -28,6 +28,8 @@ In order to build dwm you need the `Xlib` header files. In addition to this use 
 - [sxhkd](https://github.com/baskerville/sxhkd) - For external [keybindings](https://github.com/zootedb0t/dotfiles/blob/main/sxhkd/.config/sxhkd/sxhkdrc).
 - [xmenu](https://github.com/phillbush/xmenu) - Menu utility for X.
 - [xclickroot](https://github.com/phillbush/xclickroot) - xclickroot runs a command every time a given mouse button is pressed on the root window.
+- [XCB Header Files](https://xcb.freedesktop.org/) - The X protocol C-language Binding (XCB) for window swallowing. 
+- [IMLIB2](https://docs.enlightenment.org/api/imlib2/html/) - Library that does image file loading and saving as well as rendering, manipulation, arbitrary polygon support needed for `winicon` patch.
 
 # Features
 
@@ -45,6 +47,8 @@ In order to build dwm you need the `Xlib` header files. In addition to this use 
 - Floating clients always open in center.
 - Floating window can be `resized`, `moved` from keyboard.
 - Supports right click on root window to get a menu. Menu entries are defined in a shell [script](https://github.com/zootedb0t/dotfiles/blob/main/scripts/.local/bin/menu.sh).
+- Support drawing window icon on bar.
+- Support alternate tags this makes `dwm` look awesome.
 
 # Keybindings
 
@@ -140,6 +144,8 @@ All applied patches can be found in `patches` directory.
 - [dwm-alternativetags](https://dwm.suckless.org/patches/alternativetags/) - This patch introduces alternative tags which can be switched on the fly for the sole purpose of providing visual aid.
 
 - [dwm-restartsig](https://dwm.suckless.org/patches/restartsig/) - dwm can now be restarted via `MOD+CTRL+SHIFT+Q` or by `kill -HUP dwmpid`. 
+
+-[dwm-winicon](https://dwm.suckless.org/patches/winicon/) - This a patch that enables dwm to show window icons.
 
 </details>
 

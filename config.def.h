@@ -11,6 +11,8 @@ static const unsigned int gappov    = 30;       /* vert outer gap between window
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+#define ICONSIZE 20   /* icon size */
+#define ICONSPACING 5 /* space between icon and title */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
 static const int titlehighlight     = 0;        /* 0 means no highlight on window title */
 static const int horizpadbar        = 5;        /* horizontal padding for statusbar */
