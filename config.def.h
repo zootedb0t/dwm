@@ -178,6 +178,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_a,      togglealttag,   {0} },
 	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
 	{ MODKEY | ShiftMask,           XK_q,      quit,           {0} },
+	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
