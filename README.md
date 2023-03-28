@@ -146,7 +146,7 @@ All applied patches can be found in `patches` directory.
 
 - [dwm-restartsig](https://dwm.suckless.org/patches/restartsig/) - dwm can now be restarted via `MOD+CTRL+SHIFT+Q` or by `kill -HUP dwmpid`. 
 
--[dwm-winicon](https://dwm.suckless.org/patches/winicon/) - This a patch that enables dwm to show window icons.
+- [dwm-winicon](https://dwm.suckless.org/patches/winicon/) - This a patch that enables dwm to show window icons.
 
 </details>
 
