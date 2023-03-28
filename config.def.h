@@ -12,7 +12,7 @@ static       int smartgaps          = 0;        /* 1 means no outer gap when the
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const int titlehighlight     = 1;        /* 0 means no highlight on window title */
+static const int titlehighlight     = 0;        /* 0 means no highlight on window title */
 static const int horizpadbar        = 5;        /* horizontal padding for statusbar */
 static const int vertpadbar         = 5;        /* vertical padding for statusbar */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
@@ -120,7 +120,7 @@ static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY | ShiftMask,           XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_s,      togglescratch,  {.v = scratchpadcmd } },
+	{ MODKEY | ShiftMask,           XK_equal,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -143,14 +143,6 @@ static const Key keys[] = {
 	{ MODKEY | ControlMask | ShiftMask, XK_i,  incrigaps,      {.i = -1 } },
 	{ MODKEY | ControlMask,             XK_o,  incrogaps,      {.i = +1 } },
 	{ MODKEY | ControlMask | ShiftMask, XK_o,  incrogaps,      {.i = -1 } },
-	{ MODKEY | ControlMask,             XK_6,  incrihgaps,     {.i = +1 } },
-	{ MODKEY | ControlMask | ShiftMask, XK_6,  incrihgaps,     {.i = -1 } },
-	{ MODKEY | ControlMask,             XK_7,  incrivgaps,     {.i = +1 } },
-	{ MODKEY | ControlMask | ShiftMask, XK_7,  incrivgaps,     {.i = -1 } },
-	{ MODKEY | ControlMask,             XK_8,  incrohgaps,     {.i = +1 } },
-	{ MODKEY | ControlMask | ShiftMask, XK_8,  incrohgaps,     {.i = -1 } },
-	{ MODKEY | ControlMask,             XK_9,  incrovgaps,     {.i = +1 } },
-	{ MODKEY | ControlMask | ShiftMask, XK_9,  incrovgaps,     {.i = -1 } },
 	{ MODKEY | ControlMask,             XK_0,  togglegaps,     {0} },
 	{ MODKEY | ControlMask | ShiftMask, XK_0,  defaultgaps,    {0} },
 	{ MODKEY,                       XK_grave,  view,           {0} },
