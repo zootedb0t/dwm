@@ -1,8 +1,11 @@
 /* See LICENSE file for copyright and license details. */
 
+#define ICONSIZE 16   /* icon size */
+#define ICONSPACING 5 /* space between icon and title */
+
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int snap      = 15;       /* snap pixel */
+static const unsigned int snap      = 10;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const unsigned int gappih    = 20;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
@@ -11,8 +14,6 @@ static const unsigned int gappov    = 30;       /* vert outer gap between window
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-#define ICONSIZE 20   /* icon size */
-#define ICONSPACING 5 /* space between icon and title */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
 static const int titlehighlight     = 0;        /* 0 means no highlight on window title */
 static const int horizpadbar        = 5;        /* horizontal padding for statusbar */
@@ -70,6 +71,7 @@ static const Rule rules[] = {
 	{ "Protonvpn", "protonvpn", "Proton VPN", 0,        0,           1,            0,              1,            -1 },
 	{ "Galculator", "galculator", "galculator", 0,      1,           1,            0,              1,            -1 },
 	{ "Pavucontrol", "pavucontrol", "Volume Control", 0, 1,          1,            0,              1,            -1 },
+	{ "Spotify",  "spotify",  NULL,       1 << 2,       0,           0,            0,              0,            -1 },
 	{ "St",       NULL,       NULL,       0,            0,           0,            1,              0,            -1 },
 	{ NULL,       NULL,       "Event Tester", 0,        0,           0,            0,              1,            -1 }, /* xev */
 };
