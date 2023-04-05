@@ -149,11 +149,11 @@ static const Key keys[] = {
 	{ MODKEY | ControlMask | ShiftMask, XK_o,  incrogaps,      {.i = -1 } },
 	{ MODKEY | ControlMask,             XK_0,  togglegaps,     {0} },
 	{ MODKEY | ControlMask | ShiftMask, XK_0,  defaultgaps,    {0} },
-	{ MODKEY,                       XK_grave,  view,           {0} },
-	{ MODKEY,			                  XK_Tab,	   shiftview,	     { .i = 1 } },
-	{ MODKEY | ShiftMask,           XK_Tab,   shiftview,       { .i = -1 } },
-	{ MODKEY,		                    XK_semicolon, shifttag,	   { .i = 1 } },
-	{ MODKEY | ShiftMask,           XK_semicolon, shifttag,    { .i = -1 } },
+	{ MODKEY,                       XK_Tab,    view,           {0} },
+	{ MODKEY,			                  XK_g,	     shiftview,	     { .i = -1 } },
+	{ MODKEY | ShiftMask,           XK_g,      shifttag,       { .i = -1 } },
+	{ MODKEY,		                    XK_semicolon, shiftview,	 { .i = 1 } },
+	{ MODKEY | ShiftMask,           XK_semicolon, shifttag,    { .i = 1 } },
 	{ MODKEY | ShiftMask,           XK_c,      killclient,     {0} },
 	{ MODKEY | ControlMask,         XK_c,      killunsel,      {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
@@ -182,7 +182,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_a,      togglealttag,   {0} },
 	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
 	{ MODKEY | ShiftMask,           XK_q,      quit,           {0} },
-	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
+	{ MODKEY | ShiftMask,           XK_r,      quit,           {1} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
