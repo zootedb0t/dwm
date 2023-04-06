@@ -57,14 +57,14 @@ In order to build `dwm` you need the `Xlib` header files.
 - <kbd>super+p</kbd> - Open dmenu launcher.
 - Gap can be turned `on` or `off` through <kbd>super+ctrl+0</kbd>.
 - Toggle `actual fullscreen` with <kbd>super+f</kbd> and `fake fullscreen` with <kbd>super+shift+f</kbd>.
-- Cycle through non-vacant tags using <kbd>super+Tab</kbd> or <kbd>super+shift+Tab</kbd>.
-- Move window to next/previous `tag` with <kbd>super+;</kbd> or <kbd>super+shift+;</kbd>.
+- Cycle through non-vacant tags using <kbd>super+;</kbd> (next) or <kbd>super+g</kbd>(previous).
+- Move window to next `tag` with <kbd>super+shift+;</kbd> previous `tag` with <kbd>super+shift+g</kbd>.
 - Change layout with <kbd>super+/</kbd> goto next layout <kbd>super+shift+/</kbd> goto previous layout.
 - To change `mfact` <kbd>super+l</kbd>(increase) for `cfact` use <kbd>super+\\</kbd>(increase),<kbd>super+shift+\\</kbd>(decrease)
-- <kbd>super+shift+s</kbd> - Toggle scratchpad window with.
+- <kbd>super+shift+s</kbd> - Toggle scratchpad window.
 - <kbd>super+up,down,left,right</kbd> to move floating window <kbd>super+shift+up,down,left,right</kbd> to resize window.
 - <kbd>super+a</kbd> to toggle alternative tags.
-- <kbd>super+ctrl+shift+q</kbd> restart dwm.
+- <kbd>super+shift+r</kbd> restart dwm.
 
 # Running dwm
 
