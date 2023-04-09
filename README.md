@@ -50,6 +50,7 @@ In order to build `dwm` you need the `Xlib` header files.
 - Supports right click on root window to get a menu. Menu entries are defined in a shell [script](https://github.com/zootedb0t/dotfiles/blob/main/scripts/.local/bin/menu.sh).
 - Support drawing window icon on bar.
 - Support alternate tags this makes `dwm` look awesome.
+- Support `fade-in` and `fade-out` animations when switching between tags.
 
 # Keybindings
 
@@ -147,6 +148,8 @@ All applied patches can be found in `patches` directory.
 - [dwm-restartsig](https://dwm.suckless.org/patches/restartsig/) - dwm can now be restarted via `MOD+CTRL+SHIFT+Q` or by `kill -HUP dwmpid`. 
 
 - [dwm-winicon](https://dwm.suckless.org/patches/winicon/) - This a patch that enables dwm to show window icons.
+
+- [dwm-windowmap](https://dwm.suckless.org/patches/windowmap/) - Allow your windows to fade in and out when you switch dwm tags.
 
 </details>
 
