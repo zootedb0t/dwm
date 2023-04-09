@@ -86,19 +86,20 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 #include "shiftview.c"
 
 static const Layout layouts[] = {
-	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "[M]",      monocle },
-	{ "[@]",      spiral },
-	{ "[\\]",     dwindle },
-	{ "D[]",      deck },
-	{ "TTT",      bstack },
-	{ "---",      horizgrid },
-	{ ":::",      gaplessgrid },
-	{ "|M|",      centeredmaster },
-	{ ">M>",      centeredfloatingmaster },
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ NULL,       NULL },
+	// /* symbol     arrange function */
+	/* first entry is default */
+ 	{ "󰽙",      tile },
+ 	{ "󰍉",      monocle },
+	{ "󱍸",      spiral },
+	{ "󰪏",      dwindle },
+	{ "󰘸",      deck },
+	{ "󱕕",      bstack },
+	{ "󰝘",      horizgrid },
+	{ "󱗼",      gaplessgrid },
+	{ "󱒅",      centeredmaster },
+	{ "󱒆",      centeredfloatingmaster },
+	{ "",      NULL },    /* no layout function means floating behavior */
+	{ NULL,     NULL },
 };
 
 /* key definitions */
