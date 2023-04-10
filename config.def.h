@@ -14,9 +14,9 @@ static const unsigned int gappov    = 30;       /* vert outer gap between window
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char buttonbar[]       = "";
+static const char buttonbar[]       = " ";
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const int titlehighlight     = 1;        /* 0 means no highlight on window title */
+static const int titlehighlight     = 0;        /* 0 means no highlight on window title */
 static const int horizpadbar        = 5;        /* horizontal padding for statusbar */
 static const int vertpadbar         = 5;        /* vertical padding for statusbar */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
@@ -29,7 +29,7 @@ static const char *fonts[]          = { "IosevkaTerm Nerd Font:style:Regular:siz
 static const char dmenufont[]       = "monospace:size=10";
 
 /* bar opacity from 0 to 255 (Solid) */
-static const unsigned int baralpha = 150;
+static const unsigned int baralpha = 180;
 static const unsigned int borderalpha = OPAQUE;
 
 static char normbgcolor[]           = "#222222";
@@ -38,16 +38,21 @@ static char normfgcolor[]           = "#bbbbbb";
 static char selfgcolor[]            = "#eeeeee";
 static char selbordercolor[]        = "#005577";
 static char selbgcolor[]            = "#005577";
+static char btnbarbgcolor[]         = "#222222";
+static char btnbarfgcolor[]         = "#bbbbbb";
+
 static char *colors[][3] = {
 	/*               fg           bg           border   */
 	[SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
 	[SchemeSel] =  { selfgcolor,  selbgcolor,  selbordercolor  },
+	[SchemeBtn] = { btnbarfgcolor,  btnbarbgcolor,  normbordercolor  },
 };
 
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
 	[SchemeNorm] = { OPAQUE, baralpha, borderalpha },
 	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
+	[SchemeBtn] = { OPAQUE,  baralpha,  borderalpha },
 };
 
 /* tagging */
@@ -92,8 +97,8 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 static const Layout layouts[] = {
 	// /* symbol     arrange function */
 	/* first entry is default */
- 	{ "󰽙",      tile },
- 	{ "󰍉",      monocle },
+	{ "󰽙",      tile },
+	{ "󰍉",      monocle },
 	{ "󱍸",      spiral },
 	{ "󰪏",      dwindle },
 	{ "󰘸",      deck },

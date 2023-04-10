@@ -83,7 +83,7 @@
 /* enums */
 enum { Manager, Xembed, XembedInfo, XLast }; /* Xembed atoms */
 enum { CurNormal, CurResize, CurMove, CurLast }; /* cursor */
-enum { SchemeNorm, SchemeSel }; /* color schemes */
+enum { SchemeNorm, SchemeSel, SchemeBtn }; /* color schemes */
 enum { NetSupported, NetSystemTray, NetSystemTrayOP, NetSystemTrayOrientation, NetSystemTrayVisual,
        NetWMName, NetWMIcon, NetWMState, NetWMFullscreen, NetActiveWindow, NetWMWindowType, NetWMWindowTypeDock,
        NetSystemTrayOrientationHorz, NetWMWindowTypeDialog, NetClientList, NetWMCheck, NetClientInfo, NetLast
@@ -1147,6 +1147,7 @@ drawbar(Monitor *m)
 
 	if (showsystray && m == systraytomon(m)) {
 		stw = getsystraywidth();
+		// Systray highlight
 		drw_setscheme(drw, scheme[SchemeNorm]);
 		drw_rect(drw, m->ww - stw, 0, stw, bh, 1, 1);
 	}
@@ -1164,13 +1165,15 @@ drawbar(Monitor *m)
 	}
 	x = 0;
 	w = TEXTW(buttonbar);
-	drw_setscheme(drw, scheme[SchemeNorm]);
+	// Leftmost button highlight
+	drw_setscheme(drw, scheme[SchemeBtn]);
 	x = drw_text(drw, x, 0, w, bh, lrpad / 2, buttonbar, 0);
 	for (i = 0; i < LENGTH(tags); i++) {
 		/* Do not draw vacant tags */
 		if(!(occ & 1 << i || m->tagset[m->seltags] & 1 << i))
 			continue;
 		w = TEXTW(tags[i]);
+		// Tags highlight
 		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeSel : SchemeNorm]);
 		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
 	  if (ulineall || m->tagset[m->seltags] & 1 << i) /* if there are conflicts, just move these lines directly underneath both 'drw_setscheme' and 'drw_text' :) */
@@ -1178,6 +1181,7 @@ drawbar(Monitor *m)
 		x += w;
 	}
 	w = TEXTW(m->ltsymbol);
+	// Layout highlight
 	drw_setscheme(drw, scheme[SchemeNorm]);
 	x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
 
@@ -1190,8 +1194,6 @@ drawbar(Monitor *m)
 				// Now window title will get normal highlight
 				drw_setscheme(drw, scheme[SchemeNorm]);
 			}
-			// drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
-
 			drw_text(drw, x, 0, w, bh, lrpad / 2 + (m->sel->icon ? m->sel->icw + ICONSPACING : 0), m->sel->name, 0);
 			if (m->sel->icon) drw_pic(drw, x + lrpad / 2, (bh - m->sel->ich) / 2, m->sel->icw, m->sel->ich, m->sel->icon);
 			if (m->sel->isfloating) {
@@ -1620,6 +1622,8 @@ loadxrdb()
 				XRDB_LOAD_COLOR("dwm.color8", selbordercolor);
 				XRDB_LOAD_COLOR("dwm.color0", selfgcolor);
 				XRDB_LOAD_COLOR("dwm.color14", selbgcolor);
+				XRDB_LOAD_COLOR("dwm.color7", btnbarfgcolor);
+				XRDB_LOAD_COLOR("dwm.color0", btnbarbgcolor);
 			}
 		}
 	}
