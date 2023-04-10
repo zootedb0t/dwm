@@ -167,7 +167,6 @@ struct Monitor {
 	Window barwin;
 	const Layout *lt[2];
 	Pertag *pertag;
-	unsigned int alttag;
 };
 
 typedef struct {
@@ -229,7 +228,6 @@ static void grabkeys(void);
 static void incnmaster(const Arg *arg);
 static void inplacerotate(const Arg *arg);
 static void keypress(XEvent *e);
-static void keyrelease(XEvent *e);
 static void killclient(const Arg *arg);
 static void layoutmenu(const Arg *arg);
 static void losefullscreen(Client *next);
@@ -312,7 +310,6 @@ static void xinitvisual();
 static void zoom(const Arg *arg);
 static void killunsel(const Arg *arg);
 static void reset_mfact(const Arg *arg);
-static void togglealttag(const Arg *arg);
 
 static pid_t getparentprocess(pid_t p);
 static int isdescprocess(pid_t p, pid_t c);
@@ -339,7 +336,6 @@ static void (*handler[LASTEvent]) (XEvent *) = {
 	[Expose] = expose,
 	[FocusIn] = focusin,
 	[KeyPress] = keypress,
-	[KeyRelease] = keyrelease,
 	[MappingNotify] = mappingnotify,
 	[MapRequest] = maprequest,
 	[MotionNotify] = motionnotify,
@@ -626,9 +622,15 @@ buttonpress(XEvent *e)
 		if(ev->x < x) {
 			click = ClkButton;
 		} else {
-			do
-				x += TEXTW(tags[i]);
-			while (ev->x >= x && ++i < LENGTH(tags));
+		unsigned int occ = 0;
+		for(c = m->clients; c; c=c->next)
+			occ |= c->tags;
+		do {
+			/* Do not reserve space for vacant tags */
+			if (!(occ & 1 << i || m->tagset[m->seltags] & 1 << i))
+				continue;
+				  x += TEXTW(tags[i]);
+    } while (ev->x >= x && ++i < LENGTH(tags));
 			if (i < LENGTH(tags)) {
 				click = ClkTagBar;
 				arg.ui = 1 << i;
@@ -1133,7 +1135,7 @@ drawstatusbar(Monitor *m, int bh, char* stext)
 void
 drawbar(Monitor *m)
 {
-	int x, w, wdelta, tw = 0, stw = 0;
+	int x, w, tw = 0, stw = 0;
 	int boxs = drw->fonts->h / 9;
 	int boxw = drw->fonts->h / 6 + 2;
 	unsigned int i, occ = 0, urg = 0;
@@ -1165,14 +1167,14 @@ drawbar(Monitor *m)
 	drw_setscheme(drw, scheme[SchemeNorm]);
 	x = drw_text(drw, x, 0, w, bh, lrpad / 2, buttonbar, 0);
 	for (i = 0; i < LENGTH(tags); i++) {
+		/* Do not draw vacant tags */
+		if(!(occ & 1 << i || m->tagset[m->seltags] & 1 << i))
+			continue;
 		w = TEXTW(tags[i]);
-		wdelta = selmon->alttag ? abs(TEXTW(tags[i]) - TEXTW(tagsalt[i])) / 2 : 0;
 		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeSel : SchemeNorm]);
-		drw_text(drw, x, 0, w, bh, wdelta + lrpad / 2, (selmon->alttag ? tagsalt[i] : tags[i]), urg & 1 << i);
-		if (occ & 1 << i)
-			drw_rect(drw, x + boxs, boxs, boxw, boxw,
-			         m == selmon && selmon->sel && selmon->sel->tags & 1 << i,
-			         urg & 1 << i);
+		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
+	  if (ulineall || m->tagset[m->seltags] & 1 << i) /* if there are conflicts, just move these lines directly underneath both 'drw_setscheme' and 'drw_text' :) */
+		  drw_rect(drw, x + ulinepad, bh - ulinestroke - ulinevoffset, w - (ulinepad * 2), ulinestroke, 1, 0);
 		x += w;
 	}
 	w = TEXTW(m->ltsymbol);
@@ -1573,26 +1575,6 @@ keypress(XEvent *e)
 		if (keysym == keys[i].keysym
 		                && CLEANMASK(keys[i].mod) == CLEANMASK(ev->state)
 		                && keys[i].func) {
-			keys[i].func(&(keys[i].arg));
-		}
-}
-
-void
-keyrelease(XEvent *e)
-{
-	unsigned int i;
-	KeySym keysym;
-	XKeyEvent *ev;
-
-	ev = &e->xkey;
-	keysym = XKeycodeToKeysym(dpy, (KeyCode)ev->keycode, 0);
-
-	for (i = 0; i < LENGTH(keys); i++)
-		if (momentaryalttags
-		                && keys[i].func && keys[i].func == togglealttag
-		                && selmon->alttag
-		                && (keysym == keys[i].keysym
-		                    || CLEANMASK(keys[i].mod) == CLEANMASK(ev->state))) {
 			keys[i].func(&(keys[i].arg));
 		}
 }
@@ -2709,13 +2691,6 @@ tagmon(const Arg *arg)
 	} else {
 		sendmon(c, dirtomon(arg->i));
 	}
-}
-
-void
-togglealttag(const Arg *arg)
-{
-	selmon->alttag = !selmon->alttag;
-	drawbar(selmon);
 }
 
 void
