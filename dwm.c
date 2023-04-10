@@ -296,9 +296,6 @@ static void updateicon(Client *c);
 static void updatewindowtype(Client *c);
 static void updatewmhints(Client *c);
 static void view(const Arg *arg);
-static void window_set_state(Display *dpy, Window win, long state);
-static void window_map(Display *dpy, Client *c, int deiconify);
-static void window_unmap(Display *dpy, Window win, Window root, int iconify);
 static Client *wintoclient(Window w);
 static Monitor *wintomon(Window w);
 static Client *wintosystrayicon(Window w);
@@ -2593,12 +2590,14 @@ showhide(Client *c)
 	}
 	if (ISVISIBLE(c)) {
 		/* show clients top down */
-		window_map(dpy, c, 1);
+		XMoveWindow(dpy, c->win, c->x, c->y);
+		if ((!c->mon->lt[c->mon->sellt]->arrange || c->isfloating) && !c->isfullscreen)
+			resize(c, c->x, c->y, c->w, c->h, 0);
 		showhide(c->snext);
 	} else {
 		/* hide clients bottom up */
 		showhide(c->snext);
-		window_unmap(dpy, c->win, root, 1);
+		XMoveWindow(dpy, c->win, WIDTH(c) * -2, c->y);
 	}
 }
 
@@ -3349,51 +3348,6 @@ updatewmhints(Client *c)
 		}
 		XFree(wmh);
 	}
-}
-
-void
-window_set_state(Display *dpy, Window win, long state)
-{
-	long data[] = { state, None };
-
-	XChangeProperty(dpy, win, wmatom[WMState], wmatom[WMState], 32,
-		PropModeReplace, (unsigned char*)data, 2);
-}
-
-void
-window_map(Display *dpy, Client *c, int deiconify)
-{
-	Window win = c->win;
-
-	if (deiconify)
-		window_set_state(dpy, win, NormalState);
-
-	XMoveResizeWindow(dpy, c->win, c->x, c->y, c->w, c->h);
-	XSetInputFocus(dpy, win, RevertToPointerRoot, CurrentTime);
-	XMapWindow(dpy, win);
-}
-
-void
-window_unmap(Display *dpy, Window win, Window root, int iconify)
-{
-	static XWindowAttributes ca, ra;
-
-	XGrabServer(dpy);
-	XGetWindowAttributes(dpy, root, &ra);
-	XGetWindowAttributes(dpy, win, &ca);
-
-	/* Prevent UnmapNotify events */
-	XSelectInput(dpy, root, ra.your_event_mask & ~SubstructureNotifyMask);
-	XSelectInput(dpy, win, ca.your_event_mask & ~StructureNotifyMask);
-
-	XUnmapWindow(dpy, win);
-
-	if (iconify)
-		window_set_state(dpy, win, IconicState);
-
-	XSelectInput(dpy, root, ra.your_event_mask);
-	XSelectInput(dpy, win, ca.your_event_mask);
-	XUngrabServer(dpy);
 }
 
 void

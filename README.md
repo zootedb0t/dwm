@@ -49,8 +49,6 @@ In order to build `dwm` you need the `Xlib` header files.
 - Floating window can be `resized`, `moved` from keyboard.
 - Supports right click on root window to get a menu. Menu entries are defined in a shell [script](https://github.com/zootedb0t/dotfiles/blob/main/scripts/.local/bin/menu.sh).
 - Support drawing window icon on bar.
-- Support alternate tags this makes `dwm` look awesome.
-- Support `fade-in` and `fade-out` animations when switching between tags.
 
 # Keybindings
 
@@ -143,13 +141,11 @@ All applied patches can be found in `patches` directory.
 
 - [dwm-layoutmenu](https://dwm.suckless.org/patches/layoutmenu/) - This patch adds a context menu for layout switching. Right click on layout icon to bring a menu prompt, and switches to selected one.
 
-- [dwm-alternativetags](https://dwm.suckless.org/patches/alternativetags/) - This patch introduces alternative tags which can be switched on the fly for the sole purpose of providing visual aid.
-
 - [dwm-restartsig](https://dwm.suckless.org/patches/restartsig/) - dwm can now be restarted via `MOD+CTRL+SHIFT+Q` or by `kill -HUP dwmpid`. 
 
 - [dwm-winicon](https://dwm.suckless.org/patches/winicon/) - This a patch that enables dwm to show window icons.
 
-- [dwm-windowmap](https://dwm.suckless.org/patches/windowmap/) - Allow your windows to fade in and out when you switch dwm tags.
+- [dwm-statusbutton](https://dwm.suckless.org/patches/statusbutton/) - Adds a clickable button to the left hand side of the `statusbar`.
 
 </details>
 
