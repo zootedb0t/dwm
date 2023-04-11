@@ -15,7 +15,7 @@ picom --config /home/stoney/.config/picom/picom.conf &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Network-manager systray
-nm-applet &
+# nm-applet &
 
 # Keybindings
 sxhkd &
