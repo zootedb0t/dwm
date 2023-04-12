@@ -38,21 +38,21 @@ static char normfgcolor[]           = "#bbbbbb";
 static char selfgcolor[]            = "#eeeeee";
 static char selbordercolor[]        = "#005577";
 static char selbgcolor[]            = "#005577";
-static char btnbarbgcolor[]         = "#222222";
-static char btnbarfgcolor[]         = "#bbbbbb";
+static char btnbgcolor[]            = "#222222";
+static char btnfgcolor[]            = "#bbbbbb";
 
 static char *colors[][3] = {
-	/*               fg           bg           border   */
-	[SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
-	[SchemeSel] =  { selfgcolor,  selbgcolor,  selbordercolor  },
-	[SchemeBtn] = { btnbarfgcolor,  btnbarbgcolor,  normbordercolor  },
+	  /*               fg           bg           border   */
+	  [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
+	  [SchemeSel] =  { selfgcolor,  selbgcolor,  selbordercolor  },
+	  [SchemeBtn] =  { btnfgcolor,  btnbgcolor,  normbordercolor  },
 };
 
 static const unsigned int alphas[][3]      = {
-	/*               fg      bg        border     */
-	[SchemeNorm] = { OPAQUE, baralpha, borderalpha },
-	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
-	[SchemeBtn] = { OPAQUE,  baralpha,  borderalpha },
+	  /*               fg      bg        border     */
+	  [SchemeNorm] = { OPAQUE, baralpha, borderalpha },
+	  [SchemeSel]  = { OPAQUE, baralpha, borderalpha },
+	  [SchemeBtn]  = { OPAQUE, baralpha, borderalpha },
 };
 
 /* tagging */
@@ -68,21 +68,21 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     iscentered   isfloating    isterminal     noswallow      monitor */
-	{ "Gimp",     NULL,       NULL,       0,            0,           1,            0,              0,            -1 },
+	/* class              instance          title                     tags mask           iscentered        isfloating          isterminal          noswallow           monitor */
+	{ "Gimp",             NULL,             NULL,                     0,                  0,                1,                  0,                  0,                  -1 },
 	// { "firefox",  NULL,       NULL,       1 << 8,       0,           0,            0,             -1,            -1 },
-	{ "firefox", "Browser", "About Mozilla Firefox", 0, 1,           1,            0,              0,            -1 },
-	{ "firefox", "Toolkit", "Picture-in-Picture", 0,    1,           1,            0,              0,            -1 },
-	{ "firefox-nightly", "Browser", NULL, 0,            1,           1,            0,              0,            -1 },
-	{ "firefox-nightly", "Toolkit", "Picture-in-Picture", 0,  1,     1,            0,              0,            -1 },
-	{ "mpv",      "newsboat", NULL,       0,            0,           1,            0,              0,            -1 },
-	{ "Deno",     "deno",     "Peek preview", 0,        0,           0,            0,              1,            -1 },
-	{ "Protonvpn", "protonvpn", "Proton VPN", 0,        0,           1,            0,              1,            -1 },
-	{ "Galculator", "galculator", "galculator", 0,      1,           1,            0,              1,            -1 },
-	{ "Pavucontrol", "pavucontrol", "Volume Control", 0, 1,          1,            0,              1,            -1 },
-	{ "Spotify",  "spotify",  NULL,       1 << 2,       0,           0,            0,              0,            -1 },
-	{ "St",       NULL,       NULL,       0,            0,           0,            1,              0,            -1 },
-	{ NULL,       NULL,       "Event Tester", 0,        0,           0,            0,              1,            -1 }, /* xev */
+	{ "firefox",          "Browser",        "About Mozilla Firefox",  0,                   1,               1,                  0,                  0,                  -1 },
+	{ "firefox",          "Toolkit",        "Picture-in-Picture",     0,                   1,               1,                  0,                  0,                  -1 },
+	{ "firefox-nightly",  "Browser",        NULL,                     0,                   1,               1,                  0,                  0,                  -1 },
+	{ "firefox-nightly",  "Toolkit",        "Picture-in-Picture",     0,                   1,               1,                  0,                  0,                  -1 },
+	{ "mpv",              "newsboat",       NULL,                     0,                   0,               1,                  0,                  0,                  -1 },
+	{ "Deno",             "deno",           "Peek preview",           0,                   0,               0,                  0,                  1,                  -1 },
+	{ "Protonvpn",        "protonvpn",      "Proton VPN",             0,                   0,               1,                  0,                  1,                  -1 },
+	{ "Galculator",       "galculator",     "galculator",             0,                   1,               1,                  0,                  1,                  -1 },
+	{ "Pavucontrol",      "pavucontrol",    "Volume Control",         0,                   1,               1,                  0,                  1,                  -1 },
+	{ "Spotify",          "spotify",        NULL,                     1 << 2,              0,               0,                  0,                  0,                  -1 },
+	{ "St",               NULL,             NULL,                     0,                   0,               0,                  1,                  0,                  -1 },
+	{ NULL,               NULL,             "Event Tester",           0,                   0,               0,                  0,                  1,                  -1 }, /* xev */
 };
 
 /* layout(s) */
@@ -91,11 +91,11 @@ static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
 #define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
-#include "vanitygaps.c"
 #include "shiftview.c"
+#include "vanitygaps.c"
 
 static const Layout layouts[] = {
-	// /* symbol     arrange function */
+	/* symbol   arrange function */
 	/* first entry is default */
 	{ "󰽙",      tile },
 	{ "󰍉",      monocle },
@@ -129,89 +129,90 @@ static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 static const char *layoutmenu_cmd = "layoutmenu.sh";
-static const char *rclickcmd[]    = { "menu.sh", NULL }; /* desktop right-click menu */
+static const char *menu_cmd[]    = { "menu.sh", NULL }; /* desktop right-click menu */
 
 static const Key keys[] = {
-	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY | ShiftMask,           XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY | ShiftMask,           XK_s,      togglescratch,  {.v = scratchpadcmd } },
-	{ MODKEY,                       XK_b,      togglebar,      {0} },
-	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY | ShiftMask,           XK_j,      inplacerotate,  {.i = +1} },
-	{ MODKEY | ShiftMask,           XK_k,      inplacerotate,  {.i = -1} },
-	{ MODKEY | ShiftMask,           XK_h,      inplacerotate,  {.i = +2} },
-	{ MODKEY | ShiftMask,           XK_l,      inplacerotate,  {.i = -2} },
-	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_backslash, setcfact,    {.f = +0.25} },
-	{ MODKEY | ShiftMask,           XK_backslash, setcfact,    {.f = -0.25} },
-	{ MODKEY,                       XK_o,      reset_mfact,    {0} },
-	{ MODKEY | ShiftMask,           XK_o,      setcfact,       {.f =  0.00} },
-	{ MODKEY,                       XK_Return, zoom,           {0} },
-	{ MODKEY | ControlMask,             XK_u,  incrgaps,       {.i = +1 } },
-	{ MODKEY | ControlMask | ShiftMask, XK_u,  incrgaps,       {.i = -1 } },
-	{ MODKEY | ControlMask,             XK_i,  incrigaps,      {.i = +1 } },
-	{ MODKEY | ControlMask | ShiftMask, XK_i,  incrigaps,      {.i = -1 } },
-	{ MODKEY | ControlMask,             XK_o,  incrogaps,      {.i = +1 } },
-	{ MODKEY | ControlMask | ShiftMask, XK_o,  incrogaps,      {.i = -1 } },
-	{ MODKEY | ControlMask,             XK_0,  togglegaps,     {0} },
-	{ MODKEY | ControlMask | ShiftMask, XK_0,  defaultgaps,    {0} },
-	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY,			                  XK_g,	     shiftview,	     { .i = -1 } },
-	{ MODKEY | ShiftMask,           XK_g,      shifttag,       { .i = -1 } },
-	{ MODKEY,		                    XK_semicolon, shiftview,	 { .i = 1 } },
-	{ MODKEY | ShiftMask,           XK_semicolon, shifttag,    { .i = 1 } },
-	{ MODKEY | ShiftMask,           XK_c,      killclient,     {0} },
-	{ MODKEY | ControlMask,         XK_c,      killunsel,      {0} },
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_e,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_slash,  cyclelayout,    {.i = +1 } },
-	{ MODKEY | ShiftMask,		        XK_slash,  cyclelayout,    {.i = -1 } },
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY | ShiftMask,           XK_space,  togglefloating, {0} },
-	{ MODKEY,                       XK_Down,   moveresize,     {.v = "0x 25y 0w 0h" } },
-	{ MODKEY,                       XK_Up,     moveresize,     {.v = "0x -25y 0w 0h" } },
-	{ MODKEY,                       XK_Right,  moveresize,     {.v = "25x 0y 0w 0h" } },
-	{ MODKEY,                       XK_Left,   moveresize,     {.v = "-25x 0y 0w 0h" } },
-	{ MODKEY | ShiftMask,           XK_Down,   moveresize,     {.v = "0x 0y 0w 25h" } },
-	{ MODKEY | ShiftMask,           XK_Up,     moveresize,     {.v = "0x 0y 0w -25h" } },
-	{ MODKEY | ShiftMask,           XK_Right,  moveresize,     {.v = "0x 0y 25w 0h" } },
-	{ MODKEY | ShiftMask,           XK_Left,   moveresize,     {.v = "0x 0y -25w 0h" } },
-	{ MODKEY,                       XK_f,      togglefullscreen, {0} },
-	{ MODKEY | ShiftMask,           XK_f,      togglefakefullscreen, {0} },
-	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
-	{ MODKEY | ShiftMask,           XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY | ShiftMask,           XK_comma,  tagmon,         {.i = -1 } },
-	{ MODKEY | ShiftMask,           XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
-	{ MODKEY | ShiftMask,           XK_q,      quit,           {0} },
-	{ MODKEY | ShiftMask,           XK_r,      quit,           {1} },
-	TAGKEYS(                        XK_1,                      0)
-	TAGKEYS(                        XK_2,                      1)
-	TAGKEYS(                        XK_3,                      2)
-	TAGKEYS(                        XK_4,                      3)
-	TAGKEYS(                        XK_5,                      4)
-	TAGKEYS(                        XK_6,                      5)
-	TAGKEYS(                        XK_7,                      6)
-	TAGKEYS(                        XK_8,                      7)
-	TAGKEYS(                        XK_9,                      8)
+	/* modifier                           key                 function              argument */
+	{ MODKEY,                             XK_p,               spawn,                {.v = dmenucmd } },
+	{ MODKEY | ShiftMask,                 XK_Return,          spawn,                {.v = termcmd } },
+	{ MODKEY | ShiftMask,                 XK_s,               togglescratch,        {.v = scratchpadcmd } },
+	{ MODKEY,                             XK_b,               togglebar,            {0} },
+	{ MODKEY,                             XK_j,               focusstack,           {.i = +1 } },
+	{ MODKEY,                             XK_k,               focusstack,           {.i = -1 } },
+	{ MODKEY | ShiftMask,                 XK_j,               inplacerotate,        {.i = +1} },
+	{ MODKEY | ShiftMask,                 XK_k,               inplacerotate,        {.i = -1} },
+	{ MODKEY | ShiftMask,                 XK_h,               inplacerotate,        {.i = +2} },
+	{ MODKEY | ShiftMask,                 XK_l,               inplacerotate,        {.i = -2} },
+	{ MODKEY,                             XK_i,               incnmaster,           {.i = +1 } },
+	{ MODKEY,                             XK_d,               incnmaster,           {.i = -1 } },
+	{ MODKEY,                             XK_h,               setmfact,             {.f = -0.05} },
+	{ MODKEY,                             XK_l,               setmfact,             {.f = +0.05} },
+	{ MODKEY,                             XK_backslash,       setcfact,             {.f = +0.25} },
+	{ MODKEY | ShiftMask,                 XK_backslash,       setcfact,             {.f = -0.25} },
+	{ MODKEY,                             XK_o,               reset_mfact,          {0} },
+	{ MODKEY | ShiftMask,                 XK_o,               setcfact,             {.f =  0.00} },
+	{ MODKEY,                             XK_Return,          zoom,                 {0} },
+	{ MODKEY | ControlMask,               XK_u,               incrgaps,             {.i = +1 } },
+	{ MODKEY | ControlMask | ShiftMask,   XK_u,               incrgaps,             {.i = -1 } },
+	{ MODKEY | ControlMask,               XK_i,               incrigaps,            {.i = +1 } },
+	{ MODKEY | ControlMask | ShiftMask,   XK_i,               incrigaps,            {.i = -1 } },
+	{ MODKEY | ControlMask,               XK_o,               incrogaps,            {.i = +1 } },
+	{ MODKEY | ControlMask | ShiftMask,   XK_o,               incrogaps,            {.i = -1 } },
+	{ MODKEY | ControlMask,               XK_0,               togglegaps,           {0} },
+	{ MODKEY | ControlMask | ShiftMask,   XK_0,               defaultgaps,          {0} },
+	{ MODKEY,                             XK_Tab,             view,                 {0} },
+	{ MODKEY,			                        XK_g,	              shiftview,            { .i = -1 } },
+	{ MODKEY | ShiftMask,                 XK_g,               shifttag,             { .i = -1 } },
+	{ MODKEY,		                          XK_semicolon,       shiftview,            { .i = 1 } },
+	{ MODKEY | ShiftMask,                 XK_semicolon,       shifttag,             { .i = 1 } },
+	{ MODKEY | ShiftMask,                 XK_c,               killclient,           {0} },
+	{ MODKEY | ControlMask,               XK_c,               killunsel,            {0} },
+	{ MODKEY,                             XK_t,               setlayout,            {.v = &layouts[0]} },
+	{ MODKEY,                             XK_e,               setlayout,            {.v = &layouts[1]} },
+	{ MODKEY,                             XK_m,               setlayout,            {.v = &layouts[2]} },
+	{ MODKEY,                             XK_slash,           cyclelayout,          {.i = +1 } },
+	{ MODKEY | ShiftMask,		              XK_slash,           cyclelayout,          {.i = -1 } },
+	{ MODKEY,                             XK_space,           setlayout,            {0} },
+	{ MODKEY | ShiftMask,                 XK_space,           togglefloating,       {0} },
+	{ MODKEY,                             XK_Down,            moveresize,           {.v = "0x 25y 0w 0h" } },
+	{ MODKEY,                             XK_Up,              moveresize,           {.v = "0x -25y 0w 0h" } },
+	{ MODKEY,                             XK_Right,           moveresize,           {.v = "25x 0y 0w 0h" } },
+	{ MODKEY,                             XK_Left,            moveresize,           {.v = "-25x 0y 0w 0h" } },
+	{ MODKEY | ShiftMask,                 XK_Down,            moveresize,           {.v = "0x 0y 0w 25h" } },
+	{ MODKEY | ShiftMask,                 XK_Up,              moveresize,           {.v = "0x 0y 0w -25h" } },
+	{ MODKEY | ShiftMask,                 XK_Right,           moveresize,           {.v = "0x 0y 25w 0h" } },
+	{ MODKEY | ShiftMask,                 XK_Left,            moveresize,           {.v = "0x 0y -25w 0h" } },
+	{ MODKEY,                             XK_f,               togglefullscreen,     {0} },
+	{ MODKEY | ShiftMask,                 XK_f,               togglefakefullscreen, {0} },
+	{ MODKEY,                             XK_0,               view,                 {.ui = ~0 } },
+	{ MODKEY | ShiftMask,                 XK_0,               tag,                  {.ui = ~0 } },
+	{ MODKEY,                             XK_comma,           focusmon,             {.i = -1 } },
+	{ MODKEY,                             XK_period,          focusmon,             {.i = +1 } },
+	{ MODKEY | ShiftMask,                 XK_comma,           tagmon,               {.i = -1 } },
+	{ MODKEY | ShiftMask,                 XK_period,          tagmon,               {.i = +1 } },
+	{ MODKEY,                             XK_F5,              xrdb,                 {.v = NULL } },
+	{ MODKEY | ShiftMask,                 XK_q,               quit,                 {0} },
+	{ MODKEY | ShiftMask,                 XK_r,               quit,                 {1} },
+	TAGKEYS(                              XK_1,                                     0)
+	TAGKEYS(                              XK_2,                                     1)
+	TAGKEYS(                              XK_3,                                     2)
+	TAGKEYS(                              XK_4,                                     3)
+	TAGKEYS(                              XK_5,                                     4)
+	TAGKEYS(                              XK_6,                                     5)
+	TAGKEYS(                              XK_7,                                     6)
+	TAGKEYS(                              XK_8,                                     7)
+	TAGKEYS(                              XK_9,                                     8)
 };
 
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static const Button buttons[] = {
 	/* click                event mask      button          function        argument */
-	{ ClkButton,		        0,		          Button1,	      spawn,		      {.v = rclickcmd } },
+	{ ClkButton,		        0,		          Button1,	      spawn,		      {.v = menu_cmd } },
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        layoutmenu,     {0} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
+	{ ClkWinTitle,          MODKEY,         Button3,        killclient,     {0} },
 	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
