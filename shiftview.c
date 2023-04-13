@@ -6,7 +6,7 @@ shiftview(const Arg *arg)
 	Client *c;
 	unsigned int tagmask = 0;
 
-  // Uncomment this if you want to move between non-vacant tags.
+  // Uncomment this if you want to move between vacant tags.
 	// if (arg->i > 0) // left circular shift
 	// 	shifted.ui = (selmon->tagset[selmon->seltags] << arg->i)
 	// 	             | (selmon->tagset[selmon->seltags] >> (LENGTH(tags) - arg->i));

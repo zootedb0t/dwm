@@ -23,7 +23,7 @@ static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows sel
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray             = 1;   /* 0 means no systray */
-static const char *fonts[]          = { "IosevkaTerm Nerd Font:style:Regular:size=8:antialias=true:autohint=true",
+static const char *fonts[]          = { "TerminessTTF Nerd Font:style:Regular:size=8:antialias=true:autohint=true",
                                         "JoyPixels:size:8:antialias=true:autohint=true"
                                       };
 static const char dmenufont[]       = "monospace:size=10";
@@ -70,19 +70,19 @@ static const Rule rules[] = {
 	 */
 	/* class              instance          title                     tags mask           iscentered        isfloating          isterminal          noswallow           monitor */
 	{ "Gimp",             NULL,             NULL,                     0,                  0,                1,                  0,                  0,                  -1 },
-	// { "firefox",  NULL,       NULL,       1 << 8,       0,           0,            0,             -1,            -1 },
-	{ "firefox",          "Browser",        "About Mozilla Firefox",  0,                   1,               1,                  0,                  0,                  -1 },
-	{ "firefox",          "Toolkit",        "Picture-in-Picture",     0,                   1,               1,                  0,                  0,                  -1 },
-	{ "firefox-nightly",  "Browser",        NULL,                     0,                   1,               1,                  0,                  0,                  -1 },
-	{ "firefox-nightly",  "Toolkit",        "Picture-in-Picture",     0,                   1,               1,                  0,                  0,                  -1 },
-	{ "mpv",              "newsboat",       NULL,                     0,                   0,               1,                  0,                  0,                  -1 },
-	{ "Deno",             "deno",           "Peek preview",           0,                   0,               0,                  0,                  1,                  -1 },
-	{ "Protonvpn",        "protonvpn",      "Proton VPN",             0,                   0,               1,                  0,                  1,                  -1 },
-	{ "Galculator",       "galculator",     "galculator",             0,                   1,               1,                  0,                  1,                  -1 },
-	{ "Pavucontrol",      "pavucontrol",    "Volume Control",         0,                   1,               1,                  0,                  1,                  -1 },
-	{ "Spotify",          "spotify",        NULL,                     1 << 2,              0,               0,                  0,                  0,                  -1 },
-	{ "St",               NULL,             NULL,                     0,                   0,               0,                  1,                  0,                  -1 },
-	{ NULL,               NULL,             "Event Tester",           0,                   0,               0,                  0,                  1,                  -1 }, /* xev */
+	// { "firefox",          NULL,             NULL,                     1 << 8,             0,                0,                  0,                  -1,                 -1 },
+	{ "firefox",          "Browser",        "About Mozilla Firefox",  0,                  1,                1,                  0,                  0,                  -1 },
+	{ "firefox",          "Toolkit",        "Picture-in-Picture",     0,                  1,                1,                  0,                  0,                  -1 },
+	{ "firefox-nightly",  "Browser",        NULL,                     0,                  1,                1,                  0,                  0,                  -1 },
+	{ "firefox-nightly",  "Toolkit",        "Picture-in-Picture",     0,                  1,                1,                  0,                  0,                  -1 },
+	{ "mpv",              "newsboat",       NULL,                     0,                  0,                1,                  0,                  0,                  -1 },
+	{ "Deno",             "deno",           "Peek preview",           0,                  0,                0,                  0,                  1,                  -1 },
+	{ "Protonvpn",        "protonvpn",      "Proton VPN",             0,                  0,                1,                  0,                  1,                  -1 },
+	{ "Galculator",       "galculator",     "galculator",             0,                  1,                1,                  0,                  1,                  -1 },
+	{ "Pavucontrol",      "pavucontrol",    "Volume Control",         0,                  1,                1,                  0,                  1,                  -1 },
+	{ "Spotify",          "spotify",        NULL,                     0,                  0,                0,                  0,                  0,                  -1 },
+	{ "St",               NULL,             NULL,                     0,                  0,                0,                  1,                  0,                  -1 },
+	{ NULL,               NULL,             "Event Tester",           0,                  0,                0,                  0,                  1,                  -1 }, /* xev */
 };
 
 /* layout(s) */
@@ -133,7 +133,7 @@ static const char *menu_cmd[]    = { "menu.sh", NULL }; /* desktop right-click m
 
 static const Key keys[] = {
 	/* modifier                           key                 function              argument */
-	{ MODKEY,                             XK_p,               spawn,                {.v = dmenucmd } },
+	{ MODKEY | ShiftMask,                 XK_p,               spawn,                {.v = dmenucmd } },
 	{ MODKEY | ShiftMask,                 XK_Return,          spawn,                {.v = termcmd } },
 	{ MODKEY | ShiftMask,                 XK_s,               togglescratch,        {.v = scratchpadcmd } },
 	{ MODKEY,                             XK_b,               togglebar,            {0} },
