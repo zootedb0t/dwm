@@ -133,7 +133,7 @@ static const char *menu_cmd[]    = { "menu.sh", NULL }; /* desktop right-click m
 
 static const Key keys[] = {
 	/* modifier                           key                 function              argument */
-	{ MODKEY | ShiftMask,                 XK_p,               spawn,                {.v = dmenucmd } },
+	{ MODKEY,                             XK_p,               spawn,                {.v = dmenucmd } },
 	{ MODKEY | ShiftMask,                 XK_Return,          spawn,                {.v = termcmd } },
 	{ MODKEY | ShiftMask,                 XK_s,               togglescratch,        {.v = scratchpadcmd } },
 	{ MODKEY,                             XK_b,               togglebar,            {0} },
