@@ -1058,7 +1058,7 @@ drawstatusbar(Monitor *m, int bh, char* stext)
 	}
 	text = p;
 
-	w += 2; /* 1px padding on both sides */
+	w += horizpadbar;
 	ret = m->ww - w;
 	x = m->ww - w - getsystraywidth();
 
@@ -1066,7 +1066,7 @@ drawstatusbar(Monitor *m, int bh, char* stext)
 	drw->scheme[ColFg] = scheme[SchemeNorm][ColFg];
 	drw->scheme[ColBg] = scheme[SchemeNorm][ColBg];
 	drw_rect(drw, x, 0, w, bh, 1, 1);
-	x++;
+	x += horizpadbar / 2;
 
 	/* process status text */
 	i = -1;
@@ -1076,7 +1076,7 @@ drawstatusbar(Monitor *m, int bh, char* stext)
 
 			text[i] = '\0';
 			w = TEXTW(text) - lrpad;
-			drw_text(drw, x, 0, w, bh, 0, text, 0);
+			drw_text(drw, x, vertpadbar / 2, w, bh - vertpadbar, 0, text, 0);
 
 			x += w;
 
@@ -1120,7 +1120,7 @@ drawstatusbar(Monitor *m, int bh, char* stext)
 
 	if (!isCode) {
 		w = TEXTW(text) - lrpad;
-		drw_text(drw, x, 0, w, bh, 0, text, 0);
+		drw_text(drw, x, vertpadbar / 2 , w, bh - vertpadbar, 0, text, 0);
 	}
 
 	drw_setscheme(drw, scheme[SchemeNorm]);
