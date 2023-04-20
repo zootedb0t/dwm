@@ -17,13 +17,13 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char buttonbar[]       = " ";
 static const Bool viewontag         = True;     /* Switch view on tag switch */
 static const int titlehighlight     = 0;        /* 0 means no highlight on window title */
-static const int horizpadbar        = 15;        /* horizontal padding for statusbar */
-static const int vertpadbar         = 10;        /* vertical padding for statusbar */
+static const int horizpadbar        = 8;        /* horizontal padding for statusbar */
+static const int vertpadbar         = 8;        /* vertical padding for statusbar */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray             = 1;   /* 0 means no systray */
-static const char *fonts[]          = { "TerminessTTF Nerd Font:style:Regular:size=8:antialias=true:autohint=true",
+static const char *fonts[]          = { "Inconsolata Nerd Font:style:Regular:size=8:antialias=true:autohint=true",
                                         "JoyPixels:size:8:antialias=true:autohint=true"
                                       };
 static const char dmenufont[]       = "monospace:size=10";
@@ -57,11 +57,6 @@ static const unsigned int alphas[][3]      = {
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-
-static const unsigned int ulinepad	= 5;	/* horizontal padding between the underline and tag */
-static const unsigned int ulinestroke	= 2;	/* thickness / height of the underline */
-static const unsigned int ulinevoffset	= 0;	/* how far above the bottom of the bar the line should appear */
-static const int ulineall 		= 0;	/* 1 to show underline on all tags, 0 for just the active ones */
 
 static const Rule rules[] = {
 	/* xprop(1):

@@ -1,6 +1,6 @@
-# dwm - dynamic window manager
+# dwm - dynamic window manager ![dwm](https://img.shields.io/static/v1?label=dwm&message=6.4&color=blue&style=flat-square)
 
-dwm is an extremely fast, small, and dynamic window manager for X. This build aims to remain close to `base dwm` and be functional at the same time, so only limited patches have been applied. I try to keep it updated with latest commits from [suckless](https://git.suckless.org/st/).
+`dwm` is an extremely fast, small, and dynamic window manager for X. This build aims to remain close to `base dwm` and be functional at the same time, so only limited patches have been applied. I try to keep it updated with latest commits from [suckless](https://git.suckless.org/st/).
 
 # Look
 
