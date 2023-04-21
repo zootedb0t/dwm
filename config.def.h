@@ -4,7 +4,7 @@
 #define ICONSPACING 5 /* space between icon and title */
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 10;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const unsigned int gappih    = 20;       /* horiz inner gap between windows */
@@ -16,14 +16,14 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char buttonbar[]       = " ";
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const int titlehighlight     = 0;        /* 0 means no highlight on window title */
-static const int horizpadbar        = 8;        /* horizontal padding for statusbar */
-static const int vertpadbar         = 8;        /* vertical padding for statusbar */
+static const int titlehighlight     = 1;        /* 0 means no highlight on window title */
+static const int horizpadbar        = 5;        /* horizontal padding for statusbar */
+static const int vertpadbar         = 5;        /* vertical padding for statusbar */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray             = 1;   /* 0 means no systray */
-static const char *fonts[]          = { "Inconsolata Nerd Font:style:Regular:size=8:antialias=true:autohint=true",
+static const char *fonts[]          = { "BlexMono Nerd Font:style:Regular:size=8:antialias=true:autohint=true",
                                         "JoyPixels:size:8:antialias=true:autohint=true"
                                       };
 static const char dmenufont[]       = "monospace:size=10";
