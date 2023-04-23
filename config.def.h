@@ -23,8 +23,8 @@ static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows sel
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray             = 1;   /* 0 means no systray */
-static const char *fonts[]          = { "BlexMono Nerd Font:style:Regular:size=8:antialias=true:autohint=true",
-                                        "JoyPixels:size:8:antialias=true:autohint=true"
+static const char *fonts[]          = { "SauceCodePro Nerd Font:pixelsize=16:antialias=true:autohint=true",
+                                        "JoyPixels:pixelsize=16:antialias=true:autohint=true"
                                       };
 static const char dmenufont[]       = "monospace:size=10";
 
@@ -76,7 +76,7 @@ static const Rule rules[] = {
 	{ "Galculator",       "galculator",     "galculator",             0,                  1,                1,                  0,                  1,                  -1 },
 	{ "Pavucontrol",      "pavucontrol",    "Volume Control",         0,                  1,                1,                  0,                  1,                  -1 },
 	{ "Spotify",          "spotify",        NULL,                     0,                  0,                0,                  0,                  0,                  -1 },
-	{ "St",               NULL,             NULL,                     0,                  0,                0,                  1,                  0,                  -1 },
+	{ "st-256color",      NULL,             NULL,                     0,                  0,                0,                  1,                  0,                  -1 },
 	{ NULL,               NULL,             "Event Tester",           0,                  0,                0,                  0,                  1,                  -1 }, /* xev */
 };
 
