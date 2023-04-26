@@ -16,7 +16,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char buttonbar[]       = " ";
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const int titlehighlight     = 1;        /* 0 means no highlight on window title */
+static const int titlehighlight     = 0;        /* 0 means no highlight on window title */
 static const int horizpadbar        = 5;        /* horizontal padding for statusbar */
 static const int vertpadbar         = 5;        /* vertical padding for statusbar */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
@@ -186,8 +186,9 @@ static const Key keys[] = {
 	{ MODKEY | ShiftMask,                 XK_comma,           tagmon,               {.i = -1 } },
 	{ MODKEY | ShiftMask,                 XK_period,          tagmon,               {.i = +1 } },
 	{ MODKEY,                             XK_F5,              xrdb,                 {.v = NULL } },
-	{ MODKEY | ShiftMask,                 XK_q,               quit,                 {0} },
-	{ MODKEY | ShiftMask,                 XK_r,               quit,                 {1} },
+	{ MODKEY | ControlMask,               XK_q,               quit,                 {0} },
+	{ MODKEY | ShiftMask,                 XK_q,               quit,                 {1} },
+	{ MODKEY | ShiftMask,                 XK_r,               reorganizetags,       {0} },
 	TAGKEYS(                              XK_1,                                     0)
 	TAGKEYS(                              XK_2,                                     1)
 	TAGKEYS(                              XK_3,                                     2)

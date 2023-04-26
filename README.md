@@ -1,4 +1,4 @@
-# dwm - dynamic window manager [![dwm](https://img.shields.io/static/v1?label=dwm&message=6.4&color=blue&style=flat-square)](dwm.suckless.org/)
+# dwm - dynamic window manager ![dwm](https://img.shields.io/static/v1?label=dwm&message=6.4&color=blue&style=flat-square)
 
 `dwm` is an extremely fast, small, and dynamic window manager for X. This build aims to remain close to `base dwm` and be functional at the same time, so only limited patches have been applied. I try to keep it updated with latest commits from [suckless](https://git.suckless.org/st/).
 
@@ -53,7 +53,7 @@ In order to build `dwm` you need the `Xlib` header files.
 # Keybindings
 
 - <kbd>super+shift+enter</kbd> - Open terminal window. Default is `st` terminal.
-- <kbd>super+p</kbd> - Open dmenu launcher.
+- <kbd>super+p</kbd> - Open `dmenu` launcher.
 - Gap can be turned `on` or `off` through <kbd>super+ctrl+0</kbd>.
 - Toggle `actual fullscreen` with <kbd>super+f</kbd> and `fake fullscreen` with <kbd>super+shift+f</kbd>.
 - Cycle through non-vacant tags using <kbd>super+;</kbd> (next) or <kbd>super+g</kbd>(previous).
@@ -62,8 +62,7 @@ In order to build `dwm` you need the `Xlib` header files.
 - To change `mfact` <kbd>super+l</kbd>(increase) for `cfact` use <kbd>super+\\</kbd>(increase),<kbd>super+shift+\\</kbd>(decrease)
 - <kbd>super+shift+s</kbd> - Toggle scratchpad window.
 - <kbd>super+up,down,left,right</kbd> to move floating window <kbd>super+shift+up,down,left,right</kbd> to resize window.
-- <kbd>super+a</kbd> to toggle alternative tags.
-- <kbd>super+shift+r</kbd> restart dwm.
+- <kbd>super+shift+q</kbd> restart `dwm`.
 
 # Running dwm
 
@@ -146,6 +145,8 @@ All applied patches can be found in `patches` directory.
 - [dwm-winicon](https://dwm.suckless.org/patches/winicon/) - This a patch that enables dwm to show window icons.
 
 - [dwm-statusbutton](https://dwm.suckless.org/patches/statusbutton/) - Adds a clickable button to the left hand side of the `statusbar`.
+
+- [dwm-reorganizetags](https://dwm.suckless.org/patches/reorganizetags/dwm-reorganizetags-6.2.diff) - Shifts all clients per tag to leftmost unoccupied tags.
 
 </details>
 
