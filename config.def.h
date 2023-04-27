@@ -40,12 +40,15 @@ static char selbordercolor[]        = "#005577";
 static char selbgcolor[]            = "#005577";
 static char btnbgcolor[]            = "#222222";
 static char btnfgcolor[]            = "#bbbbbb";
+static char titlebgcolor[]          = "#222222";
+static char titlefgcolor[]          = "#bbbbbb";
 
 static char *colors[][3] = {
-	  /*               fg           bg           border   */
-	  [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
-	  [SchemeSel] =  { selfgcolor,  selbgcolor,  selbordercolor  },
-	  [SchemeBtn] =  { btnfgcolor,  btnbgcolor,  normbordercolor  },
+	  /*               fg             bg             border   */
+	  [SchemeNorm] = { normfgcolor,   normbgcolor,   normbordercolor },
+	  [SchemeSel] =  { selfgcolor,    selbgcolor,    selbordercolor  },
+	  [SchemeBtn] =  { btnfgcolor,    btnbgcolor,    normbordercolor },
+	  [TitleText] =  { titlefgcolor,  titlebgcolor,  normbordercolor },
 };
 
 static const unsigned int alphas[][3]      = {
@@ -53,6 +56,7 @@ static const unsigned int alphas[][3]      = {
 	  [SchemeNorm] = { OPAQUE, baralpha, borderalpha },
 	  [SchemeSel]  = { OPAQUE, baralpha, borderalpha },
 	  [SchemeBtn]  = { OPAQUE, baralpha, borderalpha },
+	  [TitleText]  = { OPAQUE, baralpha, borderalpha },
 };
 
 /* tagging */

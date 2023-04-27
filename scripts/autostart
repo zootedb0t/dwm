@@ -21,7 +21,7 @@ picom --config /home/stoney/.config/picom/picom.conf &
 sxhkd &
 
 # Menu
-xclickroot ~/.local/bin/menu.sh &
+# xclickroot ~/.local/bin/menu.sh &
 
 # Start statusbar
 exec slstatus &

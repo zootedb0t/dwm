@@ -83,7 +83,7 @@
 /* enums */
 enum { Manager, Xembed, XembedInfo, XLast }; /* Xembed atoms */
 enum { CurNormal, CurResize, CurMove, CurLast }; /* cursor */
-enum { SchemeNorm, SchemeSel, SchemeBtn }; /* color schemes */
+enum { SchemeNorm, SchemeSel, SchemeBtn, TitleText }; /* color schemes */
 enum { NetSupported, NetSystemTray, NetSystemTrayOP, NetSystemTrayOrientation, NetSystemTrayVisual,
        NetWMName, NetWMIcon, NetWMState, NetWMFullscreen, NetActiveWindow, NetWMWindowType, NetWMWindowTypeDock,
        NetSystemTrayOrientationHorz, NetWMWindowTypeDialog, NetClientList, NetWMCheck, NetClientInfo, NetLast
@@ -1188,7 +1188,7 @@ drawbar(Monitor *m)
 				drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
 			} else {
 				// Now window title will get normal highlight
-				drw_setscheme(drw, scheme[SchemeNorm]);
+				drw_setscheme(drw, scheme[TitleText]);
 			}
 			drw_text(drw, x, 0, w, bh, lrpad / 2 + (m->sel->icon ? m->sel->icw + ICONSPACING : 0), m->sel->name, 0);
 			if (m->sel->icon) drw_pic(drw, x + lrpad / 2, (bh - m->sel->ich) / 2, m->sel->icw, m->sel->ich, m->sel->icon);
@@ -1620,6 +1620,8 @@ loadxrdb()
 				XRDB_LOAD_COLOR("dwm.color14", selbgcolor);
 				XRDB_LOAD_COLOR("dwm.color7", btnfgcolor);
 				XRDB_LOAD_COLOR("dwm.color0", btnbgcolor);
+				XRDB_LOAD_COLOR("dwm.color0", titlebgcolor);
+				XRDB_LOAD_COLOR("dwm.color7", titlefgcolor);
 			}
 		}
 	}
