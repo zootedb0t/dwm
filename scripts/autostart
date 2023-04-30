@@ -1,7 +1,8 @@
 #!/bin/sh
 
 # Select random wallpaper at startup. Dependency xwallpaper, pywal
-set_wallpaper.sh &
+# set_wallpaper.sh &
+xwallpaper --zoom ~/.local/share/bg.jpg &
 
 # Set brightness level at startup
 xbacklight -set 70 &
