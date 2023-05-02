@@ -5,7 +5,7 @@
 xwallpaper --zoom ~/.local/share/bg.jpg &
 
 # Set brightness level at startup
-xbacklight -set 70 &
+xbacklight -set 80 &
 
 # Change auto-repeat rate for faster scrolling
 xset r rate 210 40

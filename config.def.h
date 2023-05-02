@@ -23,7 +23,8 @@ static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows sel
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray             = 1;   /* 0 means no systray */
-static const char *fonts[]          = { "SauceCodePro Nerd Font:pixelsize=16:antialias=true:autohint=true",
+static const char *fonts[]          = { "Source Code Pro:pixelsize=16:antialias=true:autohint=true",
+                                        "Symbols Nerd Font:pixelsize=16:antialias=true:autohint=true",
                                         "JoyPixels:pixelsize=16:antialias=true:autohint=true"
                                       };
 static const char dmenufont[]       = "monospace:size=10";

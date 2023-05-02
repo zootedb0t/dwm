@@ -14,7 +14,6 @@
 
 ![Screenshot_2023-03-28-10-52-34_1920x1080](https://user-images.githubusercontent.com/62596687/228319511-e9b0412a-83a1-406f-8eae-4a23cba49069.png)
 
-
 # Requirements
 
 In order to build `dwm` you need the `Xlib` header files.
@@ -29,7 +28,7 @@ In order to build `dwm` you need the `Xlib` header files.
 - [sxhkd](https://github.com/baskerville/sxhkd) - For external [keybindings](https://github.com/zootedb0t/dotfiles/blob/main/sxhkd/.config/sxhkd/sxhkdrc).
 - [xmenu](https://github.com/phillbush/xmenu) - Menu utility for X.
 - [xclickroot](https://github.com/phillbush/xclickroot) - xclickroot runs a command every time a given mouse button is pressed on the root window.
-- [XCB Header Files](https://xcb.freedesktop.org/) - The X protocol C-language Binding (XCB) for `window swallowing`. 
+- [XCB Header Files](https://xcb.freedesktop.org/) - The X protocol C-language Binding (XCB) for `window swallowing`.
 - [IMLIB2](https://docs.enlightenment.org/api/imlib2/html/) - Library that does image file loading and saving as well as rendering, manipulation, arbitrary polygon support needed for `winicon` patch.
 
 # Features
@@ -52,17 +51,31 @@ In order to build `dwm` you need the `Xlib` header files.
 
 # Keybindings
 
-- <kbd>super+shift+enter</kbd> - Open terminal window. Default is `st` terminal.
-- <kbd>super+p</kbd> - Open `dmenu` launcher.
-- Gap can be turned `on` or `off` through <kbd>super+ctrl+0</kbd>.
-- Toggle `actual fullscreen` with <kbd>super+f</kbd> and `fake fullscreen` with <kbd>super+shift+f</kbd>.
-- Cycle through non-vacant tags using <kbd>super+;</kbd> (next) or <kbd>super+g</kbd>(previous).
-- Move window to next `tag` with <kbd>super+shift+;</kbd> previous `tag` with <kbd>super+shift+g</kbd>.
-- Change layout with <kbd>super+/</kbd> goto next layout <kbd>super+shift+/</kbd> goto previous layout.
-- To change `mfact` <kbd>super+l</kbd>(increase) for `cfact` use <kbd>super+\\</kbd>(increase),<kbd>super+shift+\\</kbd>(decrease)
-- <kbd>super+shift+s</kbd> - Toggle scratchpad window.
-- <kbd>super+up,down,left,right</kbd> to move floating window <kbd>super+shift+up,down,left,right</kbd> to resize window.
-- <kbd>super+shift+q</kbd> restart `dwm`.
+<!-- prettier-ignore -->
+| Action                    | Key                                       |
+|---------------------------|-------------------------------------------|
+| Open Terminal             | <kbd>super+shift+enter</kbd>              |
+| Open Dmenu                | <kbd>super+p</kbd>                        |
+| Kill client               | <kbd>super+shift+q</kbd>                  |
+| Toggle Gaps               | <kbd>super+ctrl+0</kbd>                   |
+| Fullscreen                | <kbd>super+f</kbd>                        |
+| Fake Fullscreen           | <kbd>super+shift+f</kbd>                  |
+| Toggle Scratchpad         | <kbd>super+shift+s</kbd>                  |
+| Non-vacant tags(next)     | <kbd>super+;</kbd>                        |
+| Non-vacant tags(previous) | <kbd>super+g</kbd>                        |
+| Move window(next)         | <kbd>super+shift+;</kbd>                  |
+| Move window(previous)     | <kbd>super+shift+g</kbd>                  |
+| Next Layout               | <kbd>super+/</kbd>                        |
+| Previous Layout           | <kbd>super+shift+/</kbd>                  |
+| Increase mfact            | <kbd>super+l</kbd>                        |
+| Decrease mfact            | <kbd>super+h</kbd>                        |
+| Increase cfact            | <kbd>super+\\</kbd>                       |
+| Decrease mfact            | <kbd>super+shift+\\</kbd>                 |
+| Move floating window      | <kbd>super+up,down,right,left</kbd>       |
+| Resize floating window    | <kbd>super+shift+up,down,right,left</kbd> |
+| Restart dwm               | <kbd>super+shift+q</kbd>                  |
+
+For more keybindings see `config.def.h`.
 
 # Running dwm
 
@@ -140,7 +153,7 @@ All applied patches can be found in `patches` directory.
 
 - [dwm-layoutmenu](https://dwm.suckless.org/patches/layoutmenu/) - This patch adds a context menu for layout switching. Right click on layout icon to bring a menu prompt, and switches to selected one.
 
-- [dwm-restartsig](https://dwm.suckless.org/patches/restartsig/) - dwm can now be restarted via `MOD+CTRL+SHIFT+Q` or by `kill -HUP dwmpid`. 
+- [dwm-restartsig](https://dwm.suckless.org/patches/restartsig/) - dwm can now be restarted via `MOD+CTRL+SHIFT+Q` or by `kill -HUP dwmpid`.
 
 - [dwm-winicon](https://dwm.suckless.org/patches/winicon/) - This a patch that enables dwm to show window icons.
 
