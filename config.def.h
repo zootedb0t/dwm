@@ -4,7 +4,7 @@
 #define ICONSPACING 5 /* space between icon and title */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 10;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const unsigned int gappih    = 20;       /* horiz inner gap between windows */
@@ -14,7 +14,7 @@ static const unsigned int gappov    = 30;       /* vert outer gap between window
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char buttonbar[]       = " ";
+static const char buttonbar[]       = "";
 static const Bool viewontag         = True;     /* Switch view on tag switch */
 static const int titlehighlight     = 0;        /* 0 means no highlight on window title */
 static const int horizpadbar        = 5;        /* horizontal padding for statusbar */
@@ -25,7 +25,7 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray             = 1;   /* 0 means no systray */
 static const char *fonts[]          = { "Source Code Pro:pixelsize=16:antialias=true:autohint=true",
                                         "Symbols Nerd Font:pixelsize=16:antialias=true:autohint=true",
-                                        "JoyPixels:pixelsize=16:antialias=true:autohint=true"
+                                        "JoyPixels:pixelsize=16:antialias=true:autohint=true",
                                       };
 static const char dmenufont[]       = "monospace:size=10";
 
@@ -206,7 +206,7 @@ static const Key keys[] = {
 };
 
 /* button definitions */
-/* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
+/* click can be ClkButton, ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static const Button buttons[] = {
 	/* click                event mask      button          function        argument */
 	{ ClkButton,		        0,		          Button1,	      spawn,		      {.v = menu_cmd } },
