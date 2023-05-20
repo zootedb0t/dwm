@@ -85,7 +85,7 @@ For more keybindings see `config.def.h`.
 git clone https://github.com/zootedb0t/dwm
 cd dwm
 make
-sudo make clean install
+sudo make install
 ```
 
 In scripts `directory` there is `autostart` script this is used to autostart app and dwm itself. Symlink this `autostart` script to `~/.config/dwm/autostart`. Like this: `ln -s ~/dwm/scripts/autostart ~/.config/dwm/autostart`.
@@ -106,7 +106,7 @@ Make sure to give `Exec` your autostart script path.
 
 ## Configuration
 
-The configuration of dwm is done by editing `config.def.h`. After editing remove `config.h` and recompile the program.
+The configuration of dwm is done by editing `config.def.h`. After editing use `make clean` and recompile the program using `sudo make install`.
 If you want dwm to change colors according to your wallpaper. Then include `pywal` colors in `Xresources` [file](https://github.com/zootedb0t/dotfiles/blob/main/xresources/.Xresources).
 
 ## Misc notes
