@@ -1621,7 +1621,7 @@ loadxrdb()
 				XRDB_LOAD_COLOR("dwm.color7", btnfgcolor);
 				XRDB_LOAD_COLOR("dwm.color0", btnbgcolor);
 				XRDB_LOAD_COLOR("dwm.color0", titlebgcolor);
-				XRDB_LOAD_COLOR("dwm.color7", titlefgcolor);
+				XRDB_LOAD_COLOR("dwm.color6", titlefgcolor);
 			}
 		}
 	}

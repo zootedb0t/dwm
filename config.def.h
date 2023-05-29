@@ -16,14 +16,14 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char buttonbar[]       = "";
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const int titlehighlight     = 1;        /* 0 means no highlight on window title */
+static const int titlehighlight     = 0;        /* 0 means no highlight on window title */
 static const int horizpadbar        = 5;        /* horizontal padding for statusbar */
 static const int vertpadbar         = 3;        /* vertical padding for statusbar */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray             = 1;   /* 0 means no systray */
-static const char *fonts[]          = { "Source Code Pro:pixelsize=16:antialias=true:autohint=true",
+static const char *fonts[]          = { "VictorMono Nerd Font:pixelsize=16:antialias=true:autohint=true",
                                         "Symbols Nerd Font:pixelsize=16:antialias=true:autohint=true",
                                         "JoyPixels:pixelsize=16:antialias=true:autohint=true",
                                       };
