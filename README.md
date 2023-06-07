@@ -61,10 +61,10 @@ In order to build `dwm` you need the `Xlib` header files.
 | Fullscreen                | <kbd>super+f</kbd>                        |
 | Fake Fullscreen           | <kbd>super+shift+f</kbd>                  |
 | Toggle Scratchpad         | <kbd>super+shift+s</kbd>                  |
-| Non-vacant tags(next)     | <kbd>super+;</kbd>                        |
-| Non-vacant tags(previous) | <kbd>super+g</kbd>                        |
-| Move window(next)         | <kbd>super+shift+;</kbd>                  |
-| Move window(previous)     | <kbd>super+shift+g</kbd>                  |
+| Non-vacant tags(next)     | <kbd>super+]</kbd>                        |
+| Non-vacant tags(previous) | <kbd>super+[</kbd>                        |
+| Move window(next)         | <kbd>super+shift+]</kbd>                  |
+| Move window(previous)     | <kbd>super+shift+[</kbd>                  |
 | Next Layout               | <kbd>super+/</kbd>                        |
 | Previous Layout           | <kbd>super+shift+/</kbd>                  |
 | Increase mfact            | <kbd>super+l</kbd>                        |
