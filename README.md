@@ -4,13 +4,12 @@
 
 # Look
 
-![Screenshot_2023-03-08-02-00-15_1920x1080](https://user-images.githubusercontent.com/62596687/223662506-c51c8a76-7064-48a4-8e12-1d00ddd89b3d.png)
+![Screenshot_2023-06-14-11-17-27_1920x1080](https://github.com/zootedb0t/dwm/assets/62596687/66e648a7-7ebd-4c28-981d-5dfcd112f1d3)
+
 
 ![Screenshot_2023-02-22-10-45-34_1920x1080](https://user-images.githubusercontent.com/62596687/220877843-f0fdd2b4-c384-4aab-b37b-cc114e78f3e2.png)
 
 ![Screenshot_2023-01-24-01-02-01_1920x1080](https://user-images.githubusercontent.com/62596687/214235380-078d83a6-66e9-4ecd-92de-8fde8776db11.png)
-
-![Screenshot_2023-01-20-11-47-44_1920x1080](https://user-images.githubusercontent.com/62596687/213862029-809b0d77-6489-4edf-85ee-26449d865cc3.png)
 
 ![Screenshot_2023-03-28-10-52-34_1920x1080](https://user-images.githubusercontent.com/62596687/228319511-e9b0412a-83a1-406f-8eae-4a23cba49069.png)
 
