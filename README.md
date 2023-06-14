@@ -51,29 +51,113 @@ In order to build `dwm` you need the `Xlib` header files.
 
 # Keybindings
 
-<!-- prettier-ignore -->
-| Action                    | Key                                       |
-|---------------------------|-------------------------------------------|
-| Open Terminal             | <kbd>super+shift+enter</kbd>              |
-| Open Dmenu                | <kbd>super+p</kbd>                        |
-| Kill client               | <kbd>super+shift+q</kbd>                  |
-| Toggle Gaps               | <kbd>super+ctrl+0</kbd>                   |
-| Fullscreen                | <kbd>super+f</kbd>                        |
-| Fake Fullscreen           | <kbd>super+shift+f</kbd>                  |
-| Toggle Scratchpad         | <kbd>super+shift+s</kbd>                  |
-| Non-vacant tags(next)     | <kbd>super+]</kbd>                        |
-| Non-vacant tags(previous) | <kbd>super+[</kbd>                        |
-| Move window(next)         | <kbd>super+shift+]</kbd>                  |
-| Move window(previous)     | <kbd>super+shift+[</kbd>                  |
-| Next Layout               | <kbd>super+/</kbd>                        |
-| Previous Layout           | <kbd>super+shift+/</kbd>                  |
-| Increase mfact            | <kbd>super+l</kbd>                        |
-| Decrease mfact            | <kbd>super+h</kbd>                        |
-| Increase cfact            | <kbd>super+\\</kbd>                       |
-| Decrease mfact            | <kbd>super+shift+\\</kbd>                 |
-| Move floating window      | <kbd>super+up,down,right,left</kbd>       |
-| Resize floating window    | <kbd>super+shift+up,down,right,left</kbd> |
-| Restart dwm               | <kbd>super+shift+q</kbd>                  |
+<table>
+<tr>
+    <th>Action</th>
+    <th>Key</th>
+</tr>
+
+<tr>
+    <th>Open Terminal</th>
+    <th><kbd>super+shift+enter</kbd></th>
+</tr>
+
+<tr>
+    <th>Open Dmenu</th>
+    <th><kbd>super+p</kbd></th>
+</tr>
+
+<tr>
+    <th>Kill Client</th>
+    <th><kbd>super+shift+c</kbd></th>
+</tr>
+
+<tr>
+    <th>Toggle Gaps</th>
+    <th><kbd>super+ctrl+0</kbd></th>
+</tr>
+
+<tr>
+    <th>Fullscreen</th>
+    <th><kbd>super+f</kbd></th>
+</tr>
+
+<tr>
+    <th>Fake Fullscreen</th>
+    <th><kbd>super+shift+f</kbd></th>
+</tr>
+
+<tr>
+    <th>Toggle Scratchpad</th>
+    <th><kbd>super+shift+s</kbd></th>
+</tr>
+
+<tr>
+    <th>Non-vacant-tags(next)</th>
+    <th><kbd>super+]</kbd></th>
+</tr>
+
+<tr>
+    <th>Non-vacant-tags(previous)</th>
+    <th><kbd>super+[</kbd></th>
+</tr>
+
+<tr>
+    <th>Move window(next)</th>
+    <th><kbd>super+shift+]</kbd></th>
+</tr>
+
+<tr>
+    <th>Move window(previous)</th>
+    <th><kbd>super+shift+[</kbd></th>
+</tr>
+
+ <tr>
+    <th>Next Layout</th>
+    <th><kbd>super+/</kbd></th>
+</tr>
+
+<tr>
+    <th>Previous Layout</th>
+    <th><kbd>super+shift+/</kbd></th>
+</tr>
+
+<tr>
+    <th>Increase mfact</th>
+    <th><kbd>super+l</kbd></th>
+</tr>
+
+<tr>
+    <th>Decrease mfact</th>
+    <th><kbd>super+h</kbd></th>
+</tr>
+
+<tr>
+    <th>Increase cfact</th>
+    <th><kbd>super+\</kbd></th>
+</tr>
+
+<tr>
+    <th>Decrease cfact</th>
+    <th><kbd>super+shift+\</kbd></th>
+</tr>
+
+<tr>
+    <th>Move Floating Window</th>
+    <th><kbd>super+up,down,right,left</kbd></th>
+</tr>
+
+<tr>
+    <th>Resize Floating Window</th>
+    <th><kbd>super+shift+up,down,right,left</kbd></th>
+</tr>
+
+<tr>
+    <th>Restart dwm</th>
+    <th><kbd>super+shift+q</kbd></th>
+</tr>
+
+</table>
 
 For more keybindings see `config.def.h`.
 
@@ -123,44 +207,28 @@ Menu is generated using `xmenu`. Entries are written in [shell script](https://g
 
 All applied patches can be found in `patches` directory.
 
-<details><summary>Click to view</summary>
-
-- [dwm-alpha-systray](https://github.com/bakkeby/patches/blob/master/dwm/dwm-alpha-systray-6.3.diff) - Add tranparency to systray and dwm bar.
-
-- [dwm-center](https://dwm.suckless.org/patches/center/) - Center floating client window.
-
-- [dwm-cfacts-vanitygaps](https://github.com/bakkeby/patches/blob/master/dwm/dwm-cfacts-vanitygaps-6.3.diff) - This patch differentiates between inner and outer gaps as well as horizontal and vertical gaps.
-
-- [dwm-cyclelayouts](https://dwm.suckless.org/patches/cyclelayouts/) - Cycles through all avaiable layouts.
-
-- [dwm-fullscreen-compilation](https://github.com/bakkeby/patches/blob/master/dwm/dwm-fullscreen-compilation-6.3.diff) - Fake fullscreen and acutal fullscreen patch.
-
-- [dwm-inplacerotate](https://dwm.suckless.org/patches/inplacerotate/) - This patch provides keybindings to perform 'in place' rotations.
-
-- [dwm-moveresize](https://dwm.suckless.org/patches/moveresize/) - This allows you to move and resize dwm's floating clients using keyboard bindings.
-
-- [dwm-pertag](https://dwm.suckless.org/patches/pertag/) - This patch keeps layout, mwfact, barpos and nmaster per tag.
-
-- [dwm-status2d](https://dwm.suckless.org/patches/status2d/) - Status2d allows colors and rectangle drawing in your dwm status bar.
-
-- [dwm-statuspadding](https://dwm.suckless.org/patches/statuspadding/) - This makes the amount of horizontal and vertical padding in the status bar into configurable options.
-
-- [dwm-swallow](https://dwm.suckless.org/patches/swallow/) - Clients marked with isterminal in config.h swallow a window opened by any child process.
-
-- [dwm-xrdb](https://dwm.suckless.org/patches/xrdb/) - Allows dwm to read colors from xrdb `.Xresources` at run time.
-
-- [dwm-scratchpad](https://dwm.suckless.org/patches/scratchpad/) - Allows you to spawn or restore a floating terminal window.
-
-- [dwm-layoutmenu](https://dwm.suckless.org/patches/layoutmenu/) - This patch adds a context menu for layout switching. Right click on layout icon to bring a menu prompt, and switches to selected one.
-
-- [dwm-restartsig](https://dwm.suckless.org/patches/restartsig/) - dwm can now be restarted via `MOD+CTRL+SHIFT+Q` or by `kill -HUP dwmpid`.
-
-- [dwm-winicon](https://dwm.suckless.org/patches/winicon/) - This a patch that enables dwm to show window icons.
-
-- [dwm-statusbutton](https://dwm.suckless.org/patches/statusbutton/) - Adds a clickable button to the left hand side of the `statusbar`.
-
-- [dwm-reorganizetags](https://dwm.suckless.org/patches/reorganizetags/dwm-reorganizetags-6.2.diff) - Shifts all clients per tag to leftmost unoccupied tags.
-
+<details>
+<summary>Click to view</summary>
+<ul>
+  <li> <a href="(https://github.com/bakkeby/patches/blob/master/dwm/dwm-alpha-systray-6.3.diff">dwm-alpha-systray</a> - Add tranparency to systray and dwm bar.</li>
+  <li> <a href="https://dwm.suckless.org/patches/center/">dwm-center</a> - Center floating client window.</li>
+  <li> <a href="https://github.com/bakkeby/patches/blob/master/dwm/dwm-cfacts-vanitygaps-6.3.diff">dwm-cfacts-vanitygaps</a>  - This patch differentiates between inner and outer gaps as well as horizontal and vertical gaps.</li>
+  <li> <a href="https://dwm.suckless.org/patches/cyclelayouts/">dwm-cyclelayouts</a> - Cycles through all avaiable layouts.</li>
+  <li> <a href="https://github.com/bakkeby/patches/blob/master/dwm/dwm-fullscreen-compilation-6.3.diff">dwm-fullscreen-compilation</a> - Fake fullscreen and acutal fullscreen patch.</li>
+  <li> <a href="https://dwm.suckless.org/patches/inplacerotate/">dwm-inplacerotate</a> - This patch provides keybindings to perform 'in place' rotations.</li>
+  <li> <a href="https://dwm.suckless.org/patches/moveresize/">dwm-moveresize</a> - This allows you to move and resize dwm's floating clients using keyboard bindings.</li>
+  <li> <a href="https://dwm.suckless.org/patches/pertag/">dwm-pertag</a> - This patch keeps layout, mwfact, barpos and nmaster per tag.</li>
+  <li> <a href="https://dwm.suckless.org/patches/status2d/">dwm-status2d</a> - Status2d allows colors and rectangle drawing in your dwm status bar.</li>
+  <li> <a href="https://dwm.suckless.org/patches/statuspadding/">dwm-statuspadding</a> - This makes the amount of horizontal and vertical padding in the status bar into configurable options.</li>
+  <li> <a href="https://dwm.suckless.org/patches/swallow/">dwm-swallow</a> - Clients marked with isterminal in config.h swallow a window opened by any child process.</li>
+  <li> <a href="https://dwm.suckless.org/patches/xrdb/">dwm-xrdb</a> - Allows dwm to read colors from xrdb `.Xresources` at run time.</li>
+  <li> <a href="https://dwm.suckless.org/patches/scratchpad/">dwm-scratchpad</a> - Allows you to spawn or restore a floating terminal window.</li>
+  <li> <a href="https://dwm.suckless.org/patches/layoutmenu/">dwm-layoutmenu</a> - This patch adds a context menu for layout switching. Right click on layout icon to bring a menu prompt, and switches to selected one.</li>
+  <li> <a href="https://dwm.suckless.org/patches/restartsig/">dwm-restartsig</a> - dwm can now be restarted via `MOD+CTRL+SHIFT+Q` or by `kill -HUP dwmpid`.</li>
+  <li> <a href="https://dwm.suckless.org/patches/winicon/">dwm-winicon</a> - This a patch that enables dwm to show window icons.</li>
+  <li> <a href="https://dwm.suckless.org/patches/statusbutton/">dwm-statusbutton</a> - Adds a clickable button to the left hand side of the `statusbar`.</li>
+  <li> <a href="https://dwm.suckless.org/patches/reorganizetags/dwm-reorganizetags-6.2.diff">dwm-reorganizetags</a> - Shifts all clients per tag to leftmost unoccupied tags.</li>
+</ul>
 </details>
 
 ### picom
