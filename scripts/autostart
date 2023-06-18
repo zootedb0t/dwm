@@ -7,6 +7,9 @@ xwallpaper --zoom ~/.local/share/bg.jpg &
 # Set brightness level at startup
 xbacklight -set 80 &
 
+# Load pywal colors
+xrdb -merge ~/.Xresources
+
 # Change auto-repeat rate for faster scrolling
 xset r rate 210 40
 
@@ -22,7 +25,7 @@ picom --config /home/stoney/.config/picom/picom.conf &
 sxhkd &
 
 # Menu
-# xclickroot ~/.local/bin/menu.sh &
+xclickroot ~/.local/bin/menu.sh &
 
 # Start statusbar
 exec slstatus &
