@@ -81,7 +81,8 @@ static const Rule rules[] = {
 	{ "Galculator",       "galculator",     "galculator",             0,                  1,                1,                  0,                  1,                  -1 },
 	{ "Pavucontrol",      "pavucontrol",    "Volume Control",         0,                  1,                1,                  0,                  1,                  -1 },
 	{ "Spotify",          "spotify",        NULL,                     0,                  0,                0,                  0,                  0,                  -1 },
-	{ "st-256color",      NULL,             NULL,                     0,                  0,                0,                  1,                  0,                  -1 },
+	// Change class name to whatever termianl you use. For window to swallowing to work
+	{ "St",               NULL,             NULL,                     0,                  0,                0,                  1,                  0,                  -1 },
 	{ NULL,               NULL,             "Event Tester",           0,                  0,                0,                  0,                  1,                  -1 }, /* xev */
 };
 
