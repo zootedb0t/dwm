@@ -23,7 +23,7 @@ static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows sel
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray             = 1;   /* 0 means no systray */
-static const char *fonts[]          = { "VictorMono Nerd Font:pixelsize=16:antialias=true:autohint=true",
+static const char *fonts[]          = { "monospace:pixelsize=16:antialias=true:autohint=true",
                                         "Symbols Nerd Font:pixelsize=16:antialias=true:autohint=true",
                                         "JoyPixels:pixelsize=16:antialias=true:autohint=true",
                                       };
@@ -174,14 +174,14 @@ static const Key keys[] = {
 	{ MODKEY | ShiftMask,		              XK_slash,           cyclelayout,          {.i = -1 } },
 	{ MODKEY,                             XK_space,           setlayout,            {0} },
 	{ MODKEY | ShiftMask,                 XK_space,           togglefloating,       {0} },
-	{ MODKEY,                             XK_Down,            moveresize,           {.v = "0x 25y 0w 0h" } },
-	{ MODKEY,                             XK_Up,              moveresize,           {.v = "0x -25y 0w 0h" } },
-	{ MODKEY,                             XK_Right,           moveresize,           {.v = "25x 0y 0w 0h" } },
-	{ MODKEY,                             XK_Left,            moveresize,           {.v = "-25x 0y 0w 0h" } },
-	{ MODKEY | ShiftMask,                 XK_Down,            moveresize,           {.v = "0x 0y 0w 25h" } },
-	{ MODKEY | ShiftMask,                 XK_Up,              moveresize,           {.v = "0x 0y 0w -25h" } },
-	{ MODKEY | ShiftMask,                 XK_Right,           moveresize,           {.v = "0x 0y 25w 0h" } },
-	{ MODKEY | ShiftMask,                 XK_Left,            moveresize,           {.v = "0x 0y -25w 0h" } },
+	{ MODKEY | ControlMask,               XK_j,               moveresize,           {.v = "0x 25y 0w 0h" } },
+	{ MODKEY | ControlMask,               XK_k,               moveresize,           {.v = "0x -25y 0w 0h" } },
+	{ MODKEY | ControlMask,               XK_l,               moveresize,           {.v = "25x 0y 0w 0h" } },
+	{ MODKEY | ControlMask,               XK_h,               moveresize,           {.v = "-25x 0y 0w 0h" } },
+	{ MODKEY | ControlMask | ShiftMask,   XK_j,               moveresize,           {.v = "0x 0y 0w 25h" } },
+	{ MODKEY | ControlMask | ShiftMask,   XK_k,               moveresize,           {.v = "0x 0y 0w -25h" } },
+	{ MODKEY | ControlMask | ShiftMask,   XK_l,               moveresize,           {.v = "0x 0y 25w 0h" } },
+	{ MODKEY | ControlMask | ShiftMask,   XK_h,               moveresize,           {.v = "0x 0y -25w 0h" } },
 	{ MODKEY,                             XK_f,               togglefullscreen,     {0} },
 	{ MODKEY | ShiftMask,                 XK_f,               togglefakefullscreen, {0} },
 	{ MODKEY,                             XK_0,               view,                 {.ui = ~0 } },

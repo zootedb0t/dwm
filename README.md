@@ -6,7 +6,6 @@
 
 ![Screenshot_2023-06-14-11-17-27_1920x1080](https://github.com/zootedb0t/dwm/assets/62596687/66e648a7-7ebd-4c28-981d-5dfcd112f1d3)
 
-
 ![Screenshot_2023-02-22-10-45-34_1920x1080](https://user-images.githubusercontent.com/62596687/220877843-f0fdd2b4-c384-4aab-b37b-cc114e78f3e2.png)
 
 ![Screenshot_2023-01-24-01-02-01_1920x1080](https://user-images.githubusercontent.com/62596687/214235380-078d83a6-66e9-4ecd-92de-8fde8776db11.png)
@@ -27,8 +26,8 @@ In order to build `dwm` you need the `Xlib` header files.
 - [sxhkd](https://github.com/baskerville/sxhkd) - For external [keybindings](https://github.com/zootedb0t/dotfiles/blob/main/sxhkd/.config/sxhkd/sxhkdrc).
 - [xmenu](https://github.com/phillbush/xmenu) - Menu utility for X.
 - [xclickroot](https://github.com/phillbush/xclickroot) - xclickroot runs a command every time a given mouse button is pressed on the root window.
-- [XCB Header Files](https://xcb.freedesktop.org/) - The X protocol C-language Binding (XCB) for `window swallowing`.
-- [IMLIB2](https://docs.enlightenment.org/api/imlib2/html/) - Library that does image file loading and saving as well as rendering, manipulation, arbitrary polygon support needed for `winicon` patch.
+- [Xcb Header Files](https://xcb.freedesktop.org/) - The X protocol C-language Binding (XCB) for `window swallowing`.
+- [Imlib2](https://docs.enlightenment.org/api/imlib2/html/) - Library that does image file loading and saving as well as rendering, manipulation, arbitrary polygon support needed for `winicon` patch.
 
 # Features
 
@@ -143,12 +142,12 @@ In order to build `dwm` you need the `Xlib` header files.
 
 <tr>
     <th>Move Floating Window</th>
-    <th><kbd>super+up,down,right,left</kbd></th>
+    <th><kbd>super+ctrl+k,j,l,h</kbd></th>
 </tr>
 
 <tr>
     <th>Resize Floating Window</th>
-    <th><kbd>super+shift+up,down,right,left</kbd></th>
+    <th><kbd>super+ctrl+shift+k,j,l,h</kbd></th>
 </tr>
 
 <tr>

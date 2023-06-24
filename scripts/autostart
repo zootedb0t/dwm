@@ -4,9 +4,6 @@
 # set_wallpaper.sh &
 xwallpaper --zoom ~/.local/share/bg.jpg &
 
-# Set brightness level at startup
-xbacklight -set 80 &
-
 # Load pywal colors
 xrdb -merge ~/.Xresources
 
