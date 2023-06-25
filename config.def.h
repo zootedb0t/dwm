@@ -23,7 +23,7 @@ static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows sel
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray             = 1;   /* 0 means no systray */
-static const char *fonts[]          = { "monospace:pixelsize=16:antialias=true:autohint=true",
+static const char *fonts[]          = { "VictorMono Nerd Font:pixelsize=16:antialias=true:autohint=true",
                                         "Symbols Nerd Font:pixelsize=16:antialias=true:autohint=true",
                                         "JoyPixels:pixelsize=16:antialias=true:autohint=true",
                                       };
@@ -68,22 +68,23 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class              instance          title                     tags mask           iscentered        isfloating          isterminal          noswallow           monitor */
-	{ "Gimp",             NULL,             NULL,                     0,                  0,                1,                  0,                  0,                  -1 },
-	// { "firefox",          NULL,             NULL,                     1 << 8,             0,                0,                  0,                  -1,                 -1 },
-	{ "firefox",          "Browser",        "About Mozilla Firefox",  0,                  1,                1,                  0,                  0,                  -1 },
-	{ "firefox",          "Toolkit",        "Picture-in-Picture",     0,                  1,                1,                  0,                  0,                  -1 },
-	{ "firefox-nightly",  "Browser",        NULL,                     0,                  1,                1,                  0,                  0,                  -1 },
-	{ "firefox-nightly",  "Toolkit",        "Picture-in-Picture",     0,                  1,                1,                  0,                  0,                  -1 },
-	{ "mpv",              "newsboat",       NULL,                     0,                  0,                1,                  0,                  0,                  -1 },
-	{ "Deno",             "deno",           "Peek preview",           0,                  0,                0,                  0,                  1,                  -1 },
-	{ "Protonvpn",        "protonvpn",      "Proton VPN",             0,                  0,                1,                  0,                  1,                  -1 },
-	{ "Galculator",       "galculator",     "galculator",             0,                  1,                1,                  0,                  1,                  -1 },
-	{ "Pavucontrol",      "pavucontrol",    "Volume Control",         0,                  1,                1,                  0,                  1,                  -1 },
-	{ "Spotify",          "spotify",        NULL,                     0,                  0,                0,                  0,                  0,                  -1 },
+	/* class                  instance          title                         tags mask           iscentered        isfloating          isterminal          noswallow           monitor */
+	{ "Gimp",                 NULL,             NULL,                         0,                  0,                1,                  0,                  0,                  -1 },
+	// { "firefox",              NULL,             NULL,                         1 << 8,             0,                0,                  0,                  -1,                 -1 },
+	{ "firefox",              "Browser",        "About Mozilla Firefox",      0,                  1,                1,                  0,                  0,                  -1 },
+	{ "firefox",              "Toolkit",        "Picture-in-Picture",         0,                  1,                1,                  0,                  0,                  -1 },
+	{ "firefox-nightly",      "Browser",        NULL,                         0,                  1,                1,                  0,                  0,                  -1 },
+	{ "firefox-nightly",      "Toolkit",        "Picture-in-Picture",         0,                  1,                1,                  0,                  0,                  -1 },
+	{ "thunderbird-nightly",  "Mail",           "About Thunderbird Daily",    0,                  1,                1,                  0,                  0,                  -1 },
+	{ "mpv",                  "newsboat",       NULL,                         0,                  0,                1,                  0,                  0,                  -1 },
+	{ "Deno",                 "deno",           "Peek preview",               0,                  0,                0,                  0,                  1,                  -1 },
+	{ "Protonvpn",            "protonvpn",      "Proton VPN",                 0,                  0,                1,                  0,                  1,                  -1 },
+	{ "Galculator",           "galculator",     "galculator",                 0,                  1,                1,                  0,                  1,                  -1 },
+	{ "Pavucontrol",          "pavucontrol",    "Volume Control",             0,                  1,                1,                  0,                  1,                  -1 },
+	{ "Spotify",              "spotify",        NULL,                         0,                  0,                0,                  0,                  0,                  -1 },
 	// Change class name to whatever termianl you use. For window to swallowing to work
-	{ "St",               NULL,             NULL,                     0,                  0,                0,                  1,                  0,                  -1 },
-	{ NULL,               NULL,             "Event Tester",           0,                  0,                0,                  0,                  1,                  -1 }, /* xev */
+	{ "St",                   NULL,             NULL,                         0,                  0,                0,                  1,                  0,                  -1 },
+	{ NULL,                   NULL,             "Event Tester",               0,                  0,                0,                  0,                  1,                  -1 }, /* xev */
 };
 
 /* layout(s) */
