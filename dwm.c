@@ -2792,6 +2792,11 @@ togglefloating(const Arg *arg)
 	}
 	c->isfloating = !c->isfloating || c->isfixed;
 	if (selmon->sel->isfloating) {
+	  // This brings floating window to center. Comment this for default behaviour.
+    resizeclient(c, (selmon->mw - selmon->mw * 0.6) / 2,
+                 (selmon->mh - selmon->mh * 0.6) / 2, selmon->mw * 0.6,
+                 selmon->mh * 0.6);
+
 		resize(c, c->x, c->y, c->w, c->h, 0);
 	}
 	arrange(c->mon);
