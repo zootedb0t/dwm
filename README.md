@@ -4,7 +4,7 @@
 
 # Look
 
-![Screenshot_2023-06-14-11-17-27_1920x1080](https://github.com/zootedb0t/dwm/assets/62596687/66e648a7-7ebd-4c28-981d-5dfcd112f1d3)
+![Screenshot_2023-07-03-04-51-49_1920x1080](https://github.com/zootedb0t/dwm/assets/62596687/eed1f480-59e5-4d7b-89d1-ce6212dbf82b)
 
 ![Screenshot_2023-06-26-03-17-12_1920x1080](https://github.com/zootedb0t/dwm/assets/62596687/514fd311-29ed-4db9-9f52-07da004bb247)
 
