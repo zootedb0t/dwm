@@ -23,9 +23,10 @@ static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows sel
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray             = 1;   /* 0 means no systray */
-static const char *fonts[]          = { "VictorMono Nerd Font:pixelsize=16:antialias=true:autohint=true",
-                                        "Symbols Nerd Font:pixelsize=16:antialias=true:autohint=true",
-                                        "JoyPixels:pixelsize=16:antialias=true:autohint=true",
+static const char *fonts[]          = { "IntelOne Mono:pixelsize=18:antialias=true:autohint=true",
+                                        "Symbols Nerd Font:pixelsize=18:antialias=true:autohint=true",
+                                        "JoyPixels:pixelsize=18:antialias=true:autohint=true",
+
                                       };
 static const char dmenufont[]       = "monospace:size=10";
 
@@ -75,7 +76,7 @@ static const Rule rules[] = {
 	{ "firefox",              "Toolkit",        "Picture-in-Picture",         0,                  1,                1,                  0,                  0,                  -1 },
 	{ "firefox-nightly",      "Browser",        NULL,                         0,                  1,                1,                  0,                  0,                  -1 },
 	{ "firefox-nightly",      "Toolkit",        "Picture-in-Picture",         0,                  1,                1,                  0,                  0,                  -1 },
-	{ "thunderbird-nightly",  "Mail",           "About Thunderbird Daily",    0,                  1,                1,                  0,                  0,                  -1 },
+	{ "thunderbird",          "Mail",           "About Mozilla Thunderbird",  0,                  1,                1,                  0,                  0,                  -1 },
 	{ "mpv",                  "newsboat",       NULL,                         0,                  0,                1,                  0,                  0,                  -1 },
 	{ "Deno",                 "deno",           "Peek preview",               0,                  0,                0,                  0,                  1,                  -1 },
 	{ "Protonvpn",            "protonvpn",      "Proton VPN",                 0,                  0,                1,                  0,                  1,                  -1 },
