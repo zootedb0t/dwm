@@ -25,6 +25,7 @@
 #include <X11/Xft/Xft.h>
 #include <X11/Xlib-xcb.h>
 #include <xcb/res.h>
+#include <stdbool.h>
 #ifdef __OpenBSD__
 #include <sys/sysctl.h>
 #include <kvm.h>
@@ -60,8 +61,6 @@
                                     } \
                                   } \
                                 }
-
-#define OPAQUE                  0xffU
 
 #define SYSTEM_TRAY_REQUEST_DOCK    0
 #define _NET_SYSTEM_TRAY_ORIENTATION_HORZ 0
@@ -370,7 +369,7 @@ struct Pertag {
 	float mfacts[LENGTH(tags) + 1]; /* mfacts per tag */
 	unsigned int sellts[LENGTH(tags) + 1]; /* selected layouts */
 	const Layout *ltidxs[LENGTH(tags) + 1][2]; /* matrix of tags and layouts indexes  */
-	Bool showbars[LENGTH(tags) + 1]; /* display bar for the current tag */
+	bool showbars[LENGTH(tags) + 1]; /* display bar for the current tag */
 #if ZOOMSWAP_PATCH
 	Client *prevzooms[LENGTH(tags) + 1]; /* store zoom information */
 #endif // ZOOMSWAP_PATCH
@@ -1965,7 +1964,7 @@ moveresize(const Arg *arg)
 	oh = c->h;
 
 	XRaiseWindow(dpy, c->win);
-	Bool xqp = XQueryPointer(dpy, root, &dummy, &dummy, &msx, &msy, &dx, &dy, &dui);
+	bool xqp = XQueryPointer(dpy, root, &dummy, &dummy, &msx, &msy, &dx, &dy, &dui);
 	resize(c, nx, ny, nw, nh, True);
 
 	/* move cursor along with the window to avoid problems caused by the sloppy focus */
@@ -3748,7 +3747,7 @@ int
 main(int argc, char *argv[])
 {
 	if (argc == 2 && !strcmp("-v", argv[1])) {
-		die("dwm-"VERSION);
+		die("dwm-%f",VERSION);
 	} else if (argc != 1) {
 		die("usage: dwm [-v]");
 	}
