@@ -10,8 +10,9 @@
 #include "util.h"
 
 #define UTF_INVALID 0xFFFD
+#define LENGTH(X)               (sizeof (X) / sizeof (X)[0])
 
-static int;
+static int
 utf8decode(const char *s_in, long *u, int *err)
 {
 	static const unsigned char lens[] = {
@@ -37,6 +38,7 @@ utf8decode(const char *s_in, long *u, int *err)
 		if (s[i] == '\0' || (s[i] & 0xC0) != 0x80)
 			return i;
 		cp = (cp << 6) | (s[i] & 0x3F);
+	}
 
 	/* out of range, surrogate, overlong encoding */
 	if (cp > 0x10FFFF || (cp >> 11) == 0x1B || cp < overlong[len - 1])
@@ -386,7 +388,7 @@ drw_text(Drw *drw, int x, int y, unsigned int w, unsigned int h, unsigned int lp
 				}
 			}
 
-			if (overflow || !charexists || nextfont || utf8err)
+			if (overflow || !charexists || nextfont || utf8err) {
 				break;
 			} else {
 				charexists = 0;
