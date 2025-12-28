@@ -692,6 +692,7 @@ cleanup(void)
 		drw_cur_free(drw, cursor[i]);
 	}
 	for (i = 0; i < LENGTH(colors) + 1; i++) {
+		drw_scm_free(drw, scheme[i], 3);
 		free(scheme[i]);
 	}
 	free(scheme);
