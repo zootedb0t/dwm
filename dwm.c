@@ -693,7 +693,6 @@ cleanup(void)
 	}
 	for (i = 0; i < LENGTH(colors) + 1; i++) {
 		drw_scm_free(drw, scheme[i], 3);
-		free(scheme[i]);
 	}
 	free(scheme);
 	XDestroyWindow(dpy, wmcheckwin);
